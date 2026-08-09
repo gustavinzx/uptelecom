@@ -14,11 +14,14 @@
     /* Layout colors */
     --surface-bg: #f8fafc; /* Soft Slate 50 for premium feel */
     --surface-alt: #f1f5f9; /* Slate 100 */
-    --surface-dark: #0f172a; /* Slate 900 for footer */
+    --surface-dark: #0b1220; /* Deep navy-black for hero/dark sections */
+    --surface-dark-alt: #101a30; /* Slightly lifted dark surface, for cards on dark bg */
 
     /* Text colors */
     --text-main: #151515;
     --text-muted: #767676;
+    --text-on-dark: #f5f7fa;
+    --text-on-dark-muted: #94a3b8;
 
     /* shadcn/ui */
     --background: 0 0% 100%;
@@ -75,3 +78,11 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Numeric emphasis — prices, speeds. Reinforces "measured, real" data. */
+.font-num {
+  font-family: 'JetBrains Mono', 'Roboto Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+

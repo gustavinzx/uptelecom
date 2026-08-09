@@ -86,7 +86,7 @@ export default function BannerCarousel() {
                             href={banner.buttonLink}
                             className={cn(
                               buttonVariants({ size: "lg" }),
-                              "h-14 bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-10 font-semibold shadow-sm text-lg rounded-md"
+                              "h-14 bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-10 font-semibold shadow-lg shadow-[var(--brand-primary)]/20 text-lg rounded-full"
                             )}
                           >
                             {banner.buttonText}
@@ -95,15 +95,18 @@ export default function BannerCarousel() {
                       </div>
                     </div>
                     {/* Floating price card */}
-                    <div className="absolute bottom-8 right-6 md:bottom-10 md:right-12 z-30 bg-white rounded-xl shadow-2xl p-5 max-w-[200px] md:max-w-xs border border-gray-100">
-                      <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Planos a partir de</p>
-                      <p className="text-4xl font-black text-[var(--brand-primary)] leading-none">
-                        R$&nbsp;79<span className="text-base font-semibold text-gray-400">/mês</span>
-                      </p>
-                      <p className="text-xs text-gray-400 mt-2 font-medium">+ velocidade · + estabilidade</p>
-                      <a href="#planos" className="mt-3 block text-center text-xs font-bold text-[var(--brand-primary)] hover:underline">
-                        Ver todos os planos →
-                      </a>
+                    <div className="absolute bottom-8 right-6 md:bottom-10 md:right-12 z-30 bg-white rounded-2xl shadow-2xl max-w-[200px] md:max-w-xs border border-gray-100 relative overflow-hidden">
+                      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-primary)]" />
+                      <div className="p-5">
+                        <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Planos a partir de</p>
+                        <p className="font-num text-4xl font-black text-[var(--brand-primary)] leading-none">
+                          R$&nbsp;79<span className="font-sans text-base font-semibold text-gray-400">/mês</span>
+                        </p>
+                        <p className="text-xs text-gray-400 mt-2 font-medium">+ velocidade · + estabilidade</p>
+                        <a href="#planos" className="mt-3 block text-center text-xs font-bold text-white bg-[var(--brand-primary)] rounded-full py-2.5 hover:bg-[var(--brand-primary-hover)] transition-colors">
+                          Ver todos os planos
+                        </a>
+                      </div>
                     </div>
                   </>
                 )}
@@ -124,7 +127,7 @@ export default function BannerCarousel() {
                           rel="noreferrer"
                           className={cn(
                             buttonVariants({ size: "lg" }),
-                            "h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 font-bold shadow-sm text-lg rounded-md w-full md:w-auto uppercase tracking-wide"
+                            "h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 font-bold shadow-lg shadow-[#25D366]/20 text-lg rounded-full w-full md:w-auto uppercase tracking-wide"
                           )}
                         >
                           {banner.buttonText}

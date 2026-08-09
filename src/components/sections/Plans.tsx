@@ -102,7 +102,7 @@ export default function Plans() {
         </div>
 
         <Tabs defaultValue="fibra" className="w-full max-w-5xl mx-auto flex flex-col items-center">
-          <TabsList className="h-16 w-full max-w-md bg-white rounded-full p-2 mb-12 shadow-sm border border-gray-100">
+          <TabsList className="h-16 w-full max-w-md bg-white rounded-full p-2 mb-16 shadow-sm border border-gray-100">
             <TabsTrigger value="fibra" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white transition-all">
               Internet Fibra
             </TabsTrigger>
@@ -204,14 +204,14 @@ function PlanCard({ plan }: { plan: any }) {
         {plan.fullPrice && (
           <p className="text-sm text-gray-400 line-through font-bold mb-1">De R$ {plan.fullPrice},90/mês</p>
         )}
-        <div className="flex items-start justify-center gap-1 text-[var(--text-main)]">
-          <span className="text-2xl font-bold mt-2">R$</span>
-          <span className="text-7xl font-black tracking-tighter leading-none">
+        <div className="font-num flex items-start justify-center gap-1 text-[var(--text-main)]">
+          <span className="font-sans text-2xl font-bold mt-2">R$</span>
+          <span className="text-7xl font-extrabold tracking-tighter leading-none">
             {plan.price}
           </span>
           <div className="flex flex-col items-start justify-start">
             <span className="text-3xl font-bold leading-none">,{plan.cents}</span>
-            <span className="text-sm font-bold text-gray-400 mt-1 uppercase tracking-wider">/mês</span>
+            <span className="font-sans text-sm font-bold text-gray-400 mt-1 uppercase tracking-wider">/mês</span>
           </div>
         </div>
         <p className="text-xs text-gray-500 mt-3 font-medium bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
@@ -255,9 +255,9 @@ function PlanCard({ plan }: { plan: any }) {
         href="#cobertura"
         className={cn(
           buttonVariants({ size: "lg" }),
-          "w-full h-16 rounded-lg font-bold text-xl transition-all shadow-md",
+          "w-full h-16 rounded-full font-bold text-xl transition-all shadow-md",
           plan.popular 
-            ? "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] hover:shadow-lg" 
+            ? "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] hover:shadow-lg hover:shadow-[var(--brand-primary)]/20" 
             : "bg-gray-100 text-[var(--text-main)] hover:bg-gray-200"
         )}
       >
