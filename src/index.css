@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand colors (upconexion.com.br / Nova Logo) */
+    --brand-primary: #a90a34; /* Logo Deep Red */
+    --brand-primary-hover: #8f072a;
+    --brand-accent: #d70d42; /* Vivid Red */
+    --brand-blue: #0b5fb4; /* Poster Tech Blue */
+    --brand-blue-hover: #08498c;
+    
+    /* Layout colors */
+    --surface-bg: #f8fafc; /* Soft Slate 50 for premium feel */
+    --surface-alt: #f1f5f9; /* Slate 100 */
+    --surface-dark: #0f172a; /* Slate 900 for footer */
+
+    /* Text colors */
+    --text-main: #151515;
+    --text-muted: #767676;
+
+    /* shadcn/ui */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8.2%;
+    --primary: 341 94% 37%; /* #b9053d */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 226 58% 97%; /* #f4f6fd */
+    --secondary-foreground: 0 0% 8.2%;
+    --muted: 226 58% 97%;
+    --muted-foreground: 0 0% 46%;
+    --accent: 344 94% 47%; /* #ed0744 */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 341 94% 37%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 341 94% 37%;
+    --radius: 0.3rem; /* Sharper radius for corporate look */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  p, span, a, li {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+  }
+}
+
+/* Custom utilities */
+.text-gradient-brand {
+  background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
