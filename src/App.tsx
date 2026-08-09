@@ -2,6 +2,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import BannerCarousel from "./components/sections/BannerCarousel";
 import Plans from "./components/sections/Plans";
+import SpeedRace from "./components/sections/SpeedRace";
 import Combo from "./components/sections/Combo";
 import Features from "./components/sections/Features";
 import Testimonials from "./components/sections/Testimonials";
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <main className="flex-1">
         <BannerCarousel />
+        <SpeedRace />
         <Plans />
         <Combo />
         <Features />
