@@ -1,15 +1,15 @@
-import { Check, Info } from "lucide-react";
+import { Plus } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const fibraPlans = [
   {
-    name: "300MB",
+    name: "UP Mais",
+    speed: "300",
     fullPrice: "109",
     price: "79",
     cents: "90",
-    speedPct: 38,
     features: [
       "Wi-Fi Grátis (Comodato)",
       "Sem Fidelidade",
@@ -17,166 +17,119 @@ const fibraPlans = [
       "Suporte Especializado"
     ],
     popular: false,
-    apps: []
+    badge: null,
   },
   {
-    name: "500MB",
+    name: "UP Plus",
+    speed: "500",
     fullPrice: "129",
     price: "99",
     cents: "90",
-    speedPct: 63,
     features: [
-      "Wi-Fi Grátis (Comodato)",
+      "Wi-Fi 6 Grátis (Comodato)",
       "Sem Fidelidade",
       "100% Fibra Óptica",
-      "Serviço Telefônico Fixo Incluso",
+      "Telefonia Fixa Inclusa",
     ],
     popular: true,
-    badge: "Mais Vendido",
-    apps: []
+    badge: "Mais popular",
   },
   {
-    name: "800MB",
+    name: "UP Ultra",
+    speed: "800",
     fullPrice: "169",
     price: "139",
     cents: "90",
-    speedPct: 100,
     features: [
-      "Wi-Fi Grátis (Comodato)",
+      "Wi-Fi 6 Grátis (Comodato)",
       "Sem Fidelidade",
       "100% Fibra Óptica",
-      "Serviço Telefônico Fixo Incluso",
+      "Telefonia Fixa Inclusa",
     ],
     popular: false,
-    apps: []
+    badge: "Mais completo",
   },
 ];
 
 const comboPlans = [
   {
     name: "500MB + Streamings",
+    speed: "500",
     fullPrice: "179",
     price: "149",
     cents: "90",
     features: [
       "Tudo do plano 500MB",
       "Sem Fidelidade",
-      "Serviço Telefônico Fixo"
+      "Disney+ e HBO Max"
     ],
     popular: false,
-    apps: [
-      { name: "Disney+", img: "/imgs/disney.png" },
-      { name: "HBO Max", img: "/imgs/hbo.png" }
-    ]
+    badge: null,
   },
   {
-    name: "700MB + Canais Premium",
+    name: "700MB + Premium",
+    speed: "700",
     fullPrice: "219",
     price: "189",
     cents: "90",
     features: [
       "Tudo do plano 700MB",
       "Sem Fidelidade",
-      "+80 Canais (ESPN, Gloob, etc)"
+      "Globoplay e Apple TV"
     ],
     popular: true,
     badge: "COMPLETO",
-    apps: [
-      { name: "Globoplay", img: "/imgs/globoplay.png" },
-      { name: "Apple TV", img: "/imgs/appletv.png" }
-    ]
   }
 ];
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 bg-[var(--surface-alt)] relative">
+    <section id="planos" className="py-24 bg-[#020617] relative overflow-hidden">
+      {/* Glow effects */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[var(--brand-primary)]/10 blur-[120px] rounded-full pointer-events-none" />
+      
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--text-main)]">
-            Escolha o plano ideal para você
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white uppercase tracking-tight">
+            Escolha o seu novo <span className="text-[var(--brand-primary)]">Plano</span>
           </h2>
-          <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">
-            Velocidade simétrica, sem limite de download e estabilidade garantida.
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium">
+            Descubra os melhores planos para turbinar sua navegação, filmes, jogos e rotina digital com mais velocidade e estabilidade.
           </p>
         </div>
 
         <Tabs defaultValue="fibra" className="w-full max-w-5xl mx-auto flex flex-col items-center">
-          <TabsList className="h-16 w-full max-w-md bg-white rounded-full p-2 mb-16 shadow-sm border border-gray-100">
-            <TabsTrigger value="fibra" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white transition-all">
-              Internet Fibra
+          <TabsList className="h-16 w-full max-w-md bg-[#0f172a] rounded-full p-2 mb-16 shadow-inner border border-white/5">
+            <TabsTrigger value="fibra" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-gray-400 transition-all">
+              Residencial
             </TabsTrigger>
-            <TabsTrigger value="combo" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white transition-all">
-              Combos (Internet + TV)
+            <TabsTrigger value="combo" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-gray-400 transition-all">
+              Combos
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="fibra" className="w-full">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6">
               {fibraPlans.map((plan) => (
                 <PlanCard key={plan.name} plan={plan} />
               ))}
             </div>
           </TabsContent>
 
-          <TabsContent value="combo" className="w-full relative mt-16 md:mt-24">
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto relative z-10">
+          <TabsContent value="combo" className="w-full">
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {comboPlans.map((plan) => (
                 <PlanCard key={plan.name} plan={plan} />
               ))}
             </div>
           </TabsContent>
         </Tabs>
+        
+        <p className="text-center text-gray-500 text-sm mt-12 font-medium">
+          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-white hover:text-[var(--brand-primary)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
+        </p>
       </div>
     </section>
-  );
-}
-
-// Circular SVG gauge — arc goes from 220deg to -40deg (200deg sweep)
-function SpeedGauge({ pct, name }: { pct: number; name: string }) {
-  const r = 36;
-  const cx = 50;
-  const cy = 54;
-  const startAngle = 220; // degrees
-  const sweep = 200;      // total arc degrees
-  const endAngle = startAngle - sweep * (pct / 100);
-
-  const toRad = (d: number) => (d * Math.PI) / 180;
-  const arcX = (a: number) => cx + r * Math.cos(toRad(a));
-  const arcY = (a: number) => cy - r * Math.sin(toRad(a));
-
-  // Track arc (full background)
-  const trackX1 = arcX(startAngle);
-  const trackY1 = arcY(startAngle);
-  const trackX2 = arcX(startAngle - sweep);
-  const trackY2 = arcY(startAngle - sweep);
-
-  // Fill arc
-  const fillX2 = arcX(endAngle);
-  const fillY2 = arcY(endAngle);
-  const largeArc = sweep * (pct / 100) > 180 ? 1 : 0;
-
-  return (
-    <div className="flex flex-col items-center mb-4">
-      <svg viewBox="0 0 100 70" className="w-28 h-20">
-        {/* Track */}
-        <path
-          d={`M ${trackX1} ${trackY1} A ${r} ${r} 0 1 0 ${trackX2} ${trackY2}`}
-          fill="none" stroke="#e5e7eb" strokeWidth="7" strokeLinecap="round"
-        />
-        {/* Fill */}
-        {pct > 0 && (
-          <path
-            d={`M ${trackX1} ${trackY1} A ${r} ${r} 0 ${largeArc} 0 ${fillX2} ${fillY2}`}
-            fill="none" stroke="var(--brand-primary)" strokeWidth="7" strokeLinecap="round"
-          />
-        )}
-        {/* Label */}
-        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="14" fontWeight="800" fill="#151515">
-          {name}
-        </text>
-      </svg>
-    </div>
   );
 }
 
@@ -184,89 +137,83 @@ function PlanCard({ plan }: { plan: any }) {
   return (
     <div
       className={cn(
-        "relative rounded-lg p-8 md:p-10 transition-transform duration-300 hover:-translate-y-2 flex flex-col bg-white border border-gray-100",
-        plan.popular ? "shadow-2xl scale-105 z-10 border-[var(--brand-primary)] border-2" : "shadow-sm"
+        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 border",
+        plan.popular 
+          ? "bg-[#0b1426] border-[var(--brand-primary)]/50 shadow-2xl shadow-[var(--brand-primary)]/10" 
+          : "bg-[#0b1426] border-white/5 hover:border-white/10"
       )}
     >
-      {plan.badge && (
-        <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[var(--brand-primary)] text-white px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase shadow-md z-20">
-          {plan.badge}
-        </div>
-      )}
-      
-      <div className="mb-2 text-center mt-4 flex flex-col items-center">
-        <h3 className="text-lg font-bold mb-2 text-[var(--text-muted)] uppercase tracking-widest">
+      {/* Top Badge */}
+      <div className="flex justify-between items-start mb-6">
+        <h3 className="text-lg font-bold text-white">
           {plan.name}
         </h3>
-        {plan.speedPct !== undefined && (
-          <SpeedGauge pct={plan.speedPct} name={plan.name} />
-        )}
-        {plan.fullPrice && (
-          <p className="text-sm text-gray-400 line-through font-bold mb-1">De R$ {plan.fullPrice},90/mês</p>
-        )}
-        <div className="font-num flex items-start justify-center gap-1 text-[var(--text-main)]">
-          <span className="font-sans text-2xl font-bold mt-2">R$</span>
-          <span className="text-7xl font-extrabold tracking-tighter leading-none">
-            {plan.price}
+        {plan.badge && (
+          <span className="bg-[#22c55e]/20 text-[#4ade80] px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+            {plan.badge}
           </span>
-          <div className="flex flex-col items-start justify-start">
-            <span className="text-3xl font-bold leading-none">,{plan.cents}</span>
-            <span className="font-sans text-sm font-bold text-gray-400 mt-1 uppercase tracking-wider">/mês</span>
-          </div>
-        </div>
-        <p className="text-xs text-gray-500 mt-3 font-medium bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
-          no débito automático, sem fidelidade
-        </p>
+        )}
+      </div>
+      
+      {/* Speed Display */}
+      <div className="flex items-end gap-2 mb-6">
+        <span className="text-7xl font-black text-white leading-none tracking-tighter">
+          {plan.speed}
+        </span>
+        <span className="bg-[#22c55e] text-[#020617] px-3 py-1 rounded-full text-sm font-black mb-1">
+          mega
+        </span>
       </div>
 
-      <div className="h-px w-full bg-gray-100 mb-8" />
+      {/* Discount / Full Price */}
+      {plan.fullPrice && (
+        <div className="bg-white/5 inline-flex px-3 py-1 rounded-full text-xs font-semibold text-gray-400 w-max mb-4">
+          Apenas
+        </div>
+      )}
 
-      <ul className="space-y-4 mb-10 flex-1">
+      {/* Price */}
+      <div className="flex items-start gap-1 text-white mb-6">
+        <span className="text-xl font-bold mt-2">R$</span>
+        <span className="text-6xl font-black tracking-tighter leading-none">
+          {plan.price}
+        </span>
+        <div className="flex flex-col items-start justify-start">
+          <span className="text-2xl font-bold leading-none">,{plan.cents}</span>
+          <span className="text-sm font-bold text-gray-400 mt-1">/mês</span>
+        </div>
+      </div>
+
+      {/* Free Installation Pill */}
+      <div className="bg-[#22c55e] text-[#020617] px-4 py-2 rounded-full text-sm font-black w-max mb-8 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+        Instalação gratuita
+      </div>
+
+      {/* Features */}
+      <ul className="space-y-3 mb-10 flex-1">
         {plan.features.map((feature: string) => (
-          <li key={feature} className="flex items-start gap-3">
-            <div className="mt-1">
-              <Check size={20} className="text-[var(--brand-primary)]" />
+          <li key={feature} className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <Plus size={12} className="text-white" />
             </div>
-            <span className="font-semibold text-[var(--text-main)] text-lg">
+            <span className="font-semibold text-gray-300 text-sm">
               {feature}
             </span>
           </li>
         ))}
       </ul>
 
-      {plan.apps && plan.apps.length > 0 && (
-        <div className="mb-8 flex flex-wrap justify-center items-center gap-3 bg-gray-50 py-4 px-2 rounded-lg border border-gray-100">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider w-full text-center mb-2">Incluso no plano:</span>
-          {plan.apps.map((app: any, idx: number) => (
-             app.img ? (
-               <div key={idx} className="h-10 w-auto bg-white rounded-md p-1.5 shadow-sm border border-gray-100 flex items-center justify-center hover:scale-105 transition-transform" title={app.name}>
-                 <img src={app.img} alt={app.name} className="h-full w-auto object-contain" />
-               </div>
-             ) : (
-               <span key={idx} className="bg-[var(--surface-alt)] text-[var(--brand-primary)] text-sm font-bold px-3 py-1 rounded-full border border-black/5 shadow-sm">
-                 {app}
-               </span>
-             )
-          ))}
-        </div>
-      )}
-
+      {/* CTA Button */}
       <a
         href="#cobertura"
         className={cn(
           buttonVariants({ size: "lg" }),
-          "w-full h-16 rounded-full font-bold text-xl transition-all shadow-md",
-          plan.popular 
-            ? "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] hover:shadow-lg hover:shadow-[var(--brand-primary)]/20" 
-            : "bg-gray-100 text-[var(--text-main)] hover:bg-gray-200"
+          "w-full h-14 rounded-full font-black text-lg transition-all",
+          "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg hover:shadow-[var(--brand-primary)]/40 hover:-translate-y-0.5"
         )}
       >
-        Assine Já
+        Contratar
       </a>
-      
-      <div className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-gray-400 hover:text-[var(--brand-primary)] cursor-pointer transition-colors">
-        <Info size={16} /> Ver regulamento
-      </div>
     </div>
   );
 }
