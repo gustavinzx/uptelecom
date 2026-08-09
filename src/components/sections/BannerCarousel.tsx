@@ -94,6 +94,17 @@ export default function BannerCarousel() {
                         </div>
                       </div>
                     </div>
+                    {/* Floating price card */}
+                    <div className="absolute bottom-8 right-6 md:bottom-10 md:right-12 z-30 bg-white rounded-xl shadow-2xl p-5 max-w-[200px] md:max-w-xs border border-gray-100">
+                      <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Planos a partir de</p>
+                      <p className="text-4xl font-black text-[var(--brand-primary)] leading-none">
+                        R$&nbsp;79<span className="text-base font-semibold text-gray-400">/mês</span>
+                      </p>
+                      <p className="text-xs text-gray-400 mt-2 font-medium">+ velocidade · + estabilidade</p>
+                      <a href="#planos" className="mt-3 block text-center text-xs font-bold text-[var(--brand-primary)] hover:underline">
+                        Ver todos os planos →
+                      </a>
+                    </div>
                   </>
                 )}
 
