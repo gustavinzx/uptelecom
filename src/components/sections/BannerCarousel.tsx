@@ -13,6 +13,15 @@ import { useRef } from "react";
 const banners = [
   {
     id: 1,
+    image: "/imgs/banner_novo.png",
+    title: <></>,
+    subtitle: <></>,
+    buttonText: "",
+    buttonLink: "",
+    style: "image-only"
+  },
+  {
+    id: 2,
     image: "/imgs/IMG-20250723-WA0081.jpg",
     title: (
       <>
@@ -29,30 +38,12 @@ const banners = [
     buttonText: "Fale com um consultor",
     buttonLink: "https://wa.me/5561981765721",
     style: "split" // Custom style for the poster
-  },
-  {
-    id: 2,
-    image: "/imgs/slide1.jpg",
-    title: (
-      <>
-        CONECTANDO VOCÊ <br /> AO MUNDO
-      </>
-    ),
-    subtitle: (
-      <>
-        Equipamentos modernos e de última geração <br />
-        diretamente na sua casa.
-      </>
-    ),
-    buttonText: "Saiba mais",
-    buttonLink: "#vantagens",
-    style: "cover"
-  },
+  }
 ];
 
 export default function BannerCarousel() {
   const plugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 6000, stopOnInteraction: true })
   );
 
   return (
@@ -67,8 +58,18 @@ export default function BannerCarousel() {
         <CarouselContent>
           {banners.map((banner) => (
             <CarouselItem key={banner.id}>
-              <div className={cn("relative w-full h-[65vh] md:h-[75vh] overflow-hidden bg-[var(--surface-dark)] flex flex-col md:flex-row items-center", banner.style === "cover" ? "justify-center" : "")}>
+              <div className={cn("relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-white flex flex-col md:flex-row items-center", banner.style === "cover" || banner.style === "image-only" ? "justify-center" : "")}>
                 
+                {banner.style === "image-only" && (
+                  <div className="w-full h-full relative">
+                    <img 
+                      src={banner.image} 
+                      alt="Promoção UP Telecom" 
+                      className="absolute inset-0 w-full h-full object-cover md:object-fill"
+                    />
+                  </div>
+                )}
+
                 {banner.style === "cover" && (
                   <>
                     <img src={banner.image} alt="Banner" className="absolute inset-0 w-full h-full object-cover opacity-50" />
@@ -112,7 +113,10 @@ export default function BannerCarousel() {
                 )}
 
                 {banner.style === "split" && (
-                  <div className="w-full h-full max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-8 pt-10 md:pt-0">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--surface-dark)] to-[#0a1120] z-0" />
+                )}
+                {banner.style === "split" && (
+                  <div className="w-full h-full max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-8 pt-10 md:pt-0 relative z-10">
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left pb-10 md:pb-0 z-20">
                       <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight text-white leading-[1.1] uppercase">
                         {banner.title}
@@ -138,7 +142,7 @@ export default function BannerCarousel() {
                       <img 
                         src={banner.image} 
                         alt="Cartaz UP Telecom" 
-                        className="relative z-10 w-full h-full object-contain" 
+                        className="relative z-10 w-full h-full object-contain drop-shadow-2xl" 
                       />
                     </div>
                   </div>
@@ -147,8 +151,8 @@ export default function BannerCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex left-6 w-12 h-12 bg-white/10 hover:bg-white/20 border-white/20 text-white" />
-        <CarouselNext className="hidden md:flex right-6 w-12 h-12 bg-white/10 hover:bg-white/20 border-white/20 text-white" />
+        <CarouselPrevious className="hidden md:flex left-6 w-12 h-12 bg-white/50 backdrop-blur-sm hover:bg-white/90 border-transparent text-gray-900 shadow-md" />
+        <CarouselNext className="hidden md:flex right-6 w-12 h-12 bg-white/50 backdrop-blur-sm hover:bg-white/90 border-transparent text-gray-900 shadow-md" />
       </Carousel>
     </section>
   );

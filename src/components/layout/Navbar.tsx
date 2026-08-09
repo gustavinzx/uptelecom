@@ -25,18 +25,16 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 bg-[var(--surface-dark)]",
+        "sticky top-0 z-50 w-full transition-all duration-300 bg-white",
         scrolled
-          ? "shadow-lg shadow-black/20 border-b border-white/5"
-          : ""
+          ? "shadow-md border-b border-gray-100"
+          : "border-b border-gray-100"
       )}
     >
-      <div className="max-w-6xl mx-auto px-6 w-full h-20 flex items-center justify-between gap-6">
-        {/* Logo — white container to preserve brand colors against dark navbar */}
+      <div className="max-w-6xl mx-auto px-6 w-full h-24 flex items-center justify-between gap-6">
+        {/* Logo */}
         <a href="#" className="flex items-center group shrink-0">
-          <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm">
-            <img src="/imgs/logo.png" alt="UP Telecom" className="h-14 w-auto object-contain" />
-          </div>
+          <img src="/imgs/logo.png" alt="UP Telecom" className="h-16 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105" />
         </a>
 
         {/* Desktop Nav */}
@@ -45,7 +43,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-[13px] font-bold tracking-wide text-[var(--text-on-dark-muted)] hover:text-white transition-colors"
+              className="text-[14px] font-bold tracking-wide text-gray-700 hover:text-[var(--brand-primary)] transition-colors"
             >
               {link.name}
             </a>
@@ -54,7 +52,7 @@ export default function Navbar() {
             href="https://sistema.upconexion.com.br/central_assinante_web/login"
             target="_blank"
             rel="noreferrer"
-            className="text-[13px] font-bold tracking-wide text-[var(--text-on-dark-muted)] bg-white/5 border border-white/15 hover:bg-[var(--brand-primary)] hover:border-[var(--brand-primary)] hover:text-white px-5 py-2 rounded-full transition-all"
+            className="text-[13px] font-bold tracking-wide text-[var(--brand-primary)] bg-transparent border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white px-6 py-2.5 rounded-full transition-all shadow-sm"
           >
             CENTRAL DO CLIENTE
           </a>
@@ -62,28 +60,26 @@ export default function Navbar() {
 
         {/* Desktop Contact */}
         <div className="hidden lg:flex flex-col text-right shrink-0">
-          <span className="text-xs font-medium text-[var(--text-on-dark-muted)]">contato@upconexion.com.br</span>
-          <span className="text-sm font-bold text-white font-num">61 98176-5721</span>
+          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Ligue agora</span>
+          <span className="text-xl font-bold text-[var(--brand-primary)] font-num leading-tight">61 98176-5721</span>
         </div>
 
         {/* Mobile Nav */}
         <div className="lg:hidden ml-auto">
           <Sheet>
-            <SheetTrigger className="p-2 -mr-2">
-              <Menu size={24} className="text-white" />
+            <SheetTrigger className="p-2 -mr-2 text-gray-800">
+              <Menu size={28} />
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[var(--surface-dark)] border-white/10">
+            <SheetContent side="right" className="bg-white border-gray-100">
               <SheetTitle className="text-left mb-10 mt-4">
-                <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm inline-block">
-                  <img src="/imgs/logo.png" alt="UP Telecom" className="h-12 w-auto object-contain" />
-                </div>
+                <img src="/imgs/logo.png" alt="UP Telecom" className="h-14 w-auto object-contain" />
               </SheetTitle>
               <nav className="flex flex-col gap-6 mt-4">
                 {navLinks.filter(l => l.name !== "CENTRAL DO CLIENTE").map((link) => (
                   <SheetClose asChild key={link.name}>
                     <a
                       href={link.href}
-                      className="text-lg font-bold text-[var(--text-on-dark-muted)] hover:text-white transition-colors"
+                      className="text-lg font-bold text-gray-700 hover:text-[var(--brand-primary)] transition-colors"
                     >
                       {link.name}
                     </a>
@@ -93,14 +89,14 @@ export default function Navbar() {
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-lg font-bold text-[var(--text-on-dark-muted)] border-2 border-white/15 hover:bg-[var(--brand-primary)] hover:border-[var(--brand-primary)] hover:text-white px-4 py-3 rounded-full text-center mt-4 transition-all"
+                  className="text-lg font-bold text-[var(--brand-primary)] border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white px-4 py-3 rounded-full text-center mt-4 transition-all"
                 >
                   CENTRAL DO CLIENTE
                 </a>
               </nav>
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-2">
-                <span className="text-sm font-medium text-[var(--text-on-dark-muted)]">contato@upconexion.com.br</span>
-                <span className="text-lg font-bold text-white font-num">61 98176-5721</span>
+              <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col gap-2">
+                <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Ligue agora</span>
+                <span className="text-2xl font-bold text-[var(--brand-primary)] font-num">61 98176-5721</span>
               </div>
             </SheetContent>
           </Sheet>
