@@ -9,6 +9,7 @@ const fibraPlans = [
     fullPrice: "109",
     price: "79",
     cents: "90",
+    speedPct: 38,
     features: [
       "Wi-Fi Grátis (Comodato)",
       "Sem Fidelidade",
@@ -23,6 +24,7 @@ const fibraPlans = [
     fullPrice: "129",
     price: "99",
     cents: "90",
+    speedPct: 63,
     features: [
       "Wi-Fi Grátis (Comodato)",
       "Sem Fidelidade",
@@ -38,6 +40,7 @@ const fibraPlans = [
     fullPrice: "169",
     price: "139",
     cents: "90",
+    speedPct: 100,
     features: [
       "Wi-Fi Grátis (Comodato)",
       "Sem Fidelidade",
@@ -64,8 +67,7 @@ const comboPlans = [
     apps: [
       { name: "Disney+", img: "/imgs/disney.png" },
       { name: "HBO Max", img: "/imgs/hbo.png" }
-    ],
-    astronaut: true
+    ]
   },
   {
     name: "700MB + Canais Premium",
@@ -130,6 +132,54 @@ export default function Plans() {
   );
 }
 
+// Circular SVG gauge — arc goes from 220deg to -40deg (200deg sweep)
+function SpeedGauge({ pct, name }: { pct: number; name: string }) {
+  const r = 36;
+  const cx = 50;
+  const cy = 54;
+  const startAngle = 220; // degrees
+  const sweep = 200;      // total arc degrees
+  const endAngle = startAngle - sweep * (pct / 100);
+
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const arcX = (a: number) => cx + r * Math.cos(toRad(a));
+  const arcY = (a: number) => cy - r * Math.sin(toRad(a));
+
+  // Track arc (full background)
+  const trackX1 = arcX(startAngle);
+  const trackY1 = arcY(startAngle);
+  const trackX2 = arcX(startAngle - sweep);
+  const trackY2 = arcY(startAngle - sweep);
+
+  // Fill arc
+  const fillX2 = arcX(endAngle);
+  const fillY2 = arcY(endAngle);
+  const largeArc = sweep * (pct / 100) > 180 ? 1 : 0;
+
+  return (
+    <div className="flex flex-col items-center mb-4">
+      <svg viewBox="0 0 100 70" className="w-28 h-20">
+        {/* Track */}
+        <path
+          d={`M ${trackX1} ${trackY1} A ${r} ${r} 0 1 0 ${trackX2} ${trackY2}`}
+          fill="none" stroke="#e5e7eb" strokeWidth="7" strokeLinecap="round"
+        />
+        {/* Fill */}
+        {pct > 0 && (
+          <path
+            d={`M ${trackX1} ${trackY1} A ${r} ${r} 0 ${largeArc} 0 ${fillX2} ${fillY2}`}
+            fill="none" stroke="var(--brand-primary)" strokeWidth="7" strokeLinecap="round"
+          />
+        )}
+        {/* Label */}
+        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="14" fontWeight="800" fill="#151515">
+          {name}
+        </text>
+      </svg>
+    </div>
+  );
+}
+
 function PlanCard({ plan }: { plan: any }) {
   return (
     <div
@@ -138,27 +188,19 @@ function PlanCard({ plan }: { plan: any }) {
         plan.popular ? "shadow-2xl scale-105 z-10 border-[var(--brand-primary)] border-2" : "shadow-sm"
       )}
     >
-      {plan.astronaut && (
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-48 h-auto z-30 hover:scale-110 hover:-translate-y-4 transition-all duration-500 origin-bottom cursor-pointer">
-          <img 
-            src="/imgs/astronautas_cinema.png" 
-            alt="Astronautas" 
-            className="w-full h-full object-contain drop-shadow-2xl animate-pulse"
-            title="Bora assistir um filme? Assine os combos com Streaming!"
-          />
-        </div>
-      )}
-
       {plan.badge && (
         <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[var(--brand-primary)] text-white px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase shadow-md z-20">
           {plan.badge}
         </div>
       )}
       
-      <div className="mb-8 text-center mt-4 flex flex-col items-center">
-        <h3 className="text-2xl font-bold mb-4 text-[var(--text-muted)]">
+      <div className="mb-2 text-center mt-4 flex flex-col items-center">
+        <h3 className="text-lg font-bold mb-2 text-[var(--text-muted)] uppercase tracking-widest">
           {plan.name}
         </h3>
+        {plan.speedPct !== undefined && (
+          <SpeedGauge pct={plan.speedPct} name={plan.name} />
+        )}
         {plan.fullPrice && (
           <p className="text-sm text-gray-400 line-through font-bold mb-1">De R$ {plan.fullPrice},90/mês</p>
         )}

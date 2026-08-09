@@ -13,20 +13,20 @@ import { useRef } from "react";
 const banners = [
   {
     id: 1,
-    image: "/imgs/promo_watch.jpg",
+    image: "/imgs/IMG-20250723-WA0081.jpg",
     title: (
       <>
-        O Melhor do <br />
-        <span className="text-[var(--brand-primary)]">Entretenimento</span>
+        Conectando você <br />
+        <span className="text-[var(--brand-primary)]">de verdade</span>
       </>
     ),
     subtitle: (
       <>
-        Conheça o novo Plano WATCH™ da UP Telecom.<br />
-        <span className="inline-block mt-2">+80 canais ao vivo e os melhores streamings inclusos!</span>
+        Fibra Óptica 100% própria, sem fidelidade e com os melhores serviços.<br />
+        <span className="inline-block mt-2">Acesso a Disney+, HBO Max, Globoplay e muito mais!</span>
       </>
     ),
-    buttonText: "Assine o Plano Watch",
+    buttonText: "Fale com um consultor",
     buttonLink: "https://wa.me/5561981765721",
     style: "split" // Custom style for the poster
   },

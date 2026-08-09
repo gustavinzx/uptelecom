@@ -52,7 +52,7 @@ export default function Navbar() {
             href="https://sistema.upconexion.com.br/central_assinante_web/login"
             target="_blank"
             rel="noreferrer"
-            className="text-[13px] font-bold tracking-wide text-white bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] px-5 py-2.5 rounded-md transition-all shadow-sm"
+            className="text-[13px] font-bold tracking-wide text-[var(--brand-primary)] border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white px-5 py-2 rounded-md transition-all"
           >
             CENTRAL DO CLIENTE
           </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-lg font-bold text-white bg-[var(--brand-primary)] px-4 py-3 rounded-md text-center mt-4 shadow-sm"
+                  className="text-lg font-bold text-[var(--brand-primary)] border-2 border-[var(--brand-primary)] px-4 py-3 rounded-md text-center mt-4 hover:bg-[var(--brand-primary)] hover:text-white transition-all"
                 >
                   CENTRAL DO CLIENTE
                 </a>

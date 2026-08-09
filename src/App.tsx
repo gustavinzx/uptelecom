@@ -1,7 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import BannerCarousel from "./components/sections/BannerCarousel";
-import Stats from "./components/sections/Stats";
 import Plans from "./components/sections/Plans";
 import Combo from "./components/sections/Combo";
 import Features from "./components/sections/Features";
@@ -22,7 +21,6 @@ function App() {
         <Plans />
         <Combo />
         <Features />
-        <Stats />
         <Testimonials />
         <Curiosities />
         <Blog />
