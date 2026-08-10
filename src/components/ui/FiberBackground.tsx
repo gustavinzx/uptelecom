@@ -4,8 +4,8 @@ export function FiberBackground() {
   const [fibers, setFibers] = useState<any[]>([]);
 
   useEffect(() => {
-    // Determine number of fibers based on screen width to avoid clutter on mobile
-    const numFibers = window.innerWidth < 768 ? 10 : 25;
+    // Determine number of fibers based on screen width to avoid clutter and lag
+    const numFibers = window.innerWidth < 768 ? 5 : 12;
     
     const newFibers = Array.from({ length: numFibers }).map((_, i) => {
       const isHorizontal = Math.random() > 0.5;
@@ -38,7 +38,7 @@ export function FiberBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden mix-blend-screen opacity-80">
+    <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-60">
       {fibers.map((fiber) => (
         <div
           key={fiber.id}
@@ -49,9 +49,10 @@ export function FiberBackground() {
             width: fiber.width,
             height: fiber.height,
             background: `linear-gradient(${fiber.gradientDir}, transparent, ${fiber.color})`,
-            boxShadow: `0 0 10px ${fiber.color}, 0 0 20px ${fiber.color}`,
+            boxShadow: `0 0 8px ${fiber.color}`,
             animationDelay: `${fiber.delay}s`,
             animationDuration: `${fiber.duration}s`,
+            willChange: 'transform',
           }}
         />
       ))}
