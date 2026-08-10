@@ -30,8 +30,8 @@ export function FiberBackground() {
         gradientDir: isHorizontal ? (isReverse ? '270deg' : '90deg') : (isReverse ? '0deg' : '180deg'),
         // Determine the animation class
         animClass: isHorizontal 
-          ? (isReverse ? 'animate-fiber-move-left' : 'animate-fiber-move-right') 
-          : (isReverse ? 'animate-fiber-move-up' : 'animate-fiber-move-down'),
+          ? (isReverse ? 'fiber-move-left' : 'fiber-move-right') 
+          : (isReverse ? 'fiber-move-up' : 'fiber-move-down'),
       };
     });
     setFibers(newFibers);
@@ -51,7 +51,7 @@ export function FiberBackground() {
             background: `linear-gradient(${fiber.gradientDir}, transparent, ${fiber.color})`,
             boxShadow: `0 0 10px ${fiber.color}, 0 0 20px ${fiber.color}`,
             animationDelay: `${fiber.delay}s`,
-            ['--fiber-duration' as any]: `${fiber.duration}s`,
+            animationDuration: `${fiber.duration}s`,
           }}
         />
       ))}

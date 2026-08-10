@@ -90,3 +90,34 @@
   letter-spacing: -0.03em;
 }
 
+/* Fiber Animations */
+@keyframes fiber-move-down {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+@keyframes fiber-move-up {
+  0% { transform: translateY(100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+@keyframes fiber-move-right {
+  0% { transform: translateX(-100vw); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0; }
+}
+@keyframes fiber-move-left {
+  0% { transform: translateX(100vw); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(-100vw); opacity: 0; }
+}
+
+.fiber-move-down { animation: fiber-move-down linear infinite; }
+.fiber-move-up { animation: fiber-move-up linear infinite; }
+.fiber-move-right { animation: fiber-move-right linear infinite; }
+.fiber-move-left { animation: fiber-move-left linear infinite; }
+
