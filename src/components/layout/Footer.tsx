@@ -13,8 +13,12 @@ export default function Footer() {
           
           {/* Logo & About */}
           <div className="flex flex-col">
-            <a href="#" className="flex items-center mb-4 group inline-block -ml-2">
-              <img src="/imgs/logo_up_horizontal.png" alt="UP Telecom" className="w-[180px] md:w-[220px] h-auto object-contain transform-gpu origin-left group-hover:scale-105 transition-transform duration-300 -my-4" />
+            <a href="#" className="relative flex items-center justify-start h-12 md:h-16 w-[180px] md:w-[220px] mb-6 group -ml-2 z-10">
+              <img 
+                src="/imgs/logo_up_horizontal.png" 
+                alt="UP Telecom" 
+                className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-auto min-w-[250px] md:min-w-[320px] pointer-events-none object-contain transform-gpu origin-left group-hover:scale-105 transition-transform duration-300" 
+              />
             </a>
             <p className="text-sm leading-relaxed mb-8 font-medium">
               A UP Telecom é um provedor de internet ultra rápida com tecnologia 100% fibra óptica, modernas redes próprias e equipamentos de última geração.
