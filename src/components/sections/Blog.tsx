@@ -167,7 +167,7 @@ export default function Blog() {
                 Voltar <X size={24} />
               </button>
               
-              <div className="w-full h-[400px] md:h-[550px] rounded-lg overflow-hidden mb-12 shadow-2xl relative">
+              <div className="w-full h-[400px] md:h-[550px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl relative">
                 <img 
                   src={selectedPost.img} 
                   alt={selectedPost.title} 
