@@ -113,7 +113,7 @@ export default function Hero() {
       </Carousel>
 
       {/* Floating Price Card (Premium Glassmorphism) */}
-      <div className="hidden lg:block absolute bottom-16 right-16 z-30 group">
+      <div className="hidden lg:block absolute bottom-16 right-24 xl:right-32 z-30 group">
         <div className="absolute -inset-1 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-primary)] rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition duration-500" />
         
         <div className="relative bg-[#0b1220]/70 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl p-10 max-w-[380px] hover:-translate-y-2 transition-all duration-300 flex flex-col">
