@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function SocialMedia() {
   return (
@@ -7,7 +8,7 @@ export default function SocialMedia() {
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
       
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Text & Links Side */}
@@ -86,7 +87,7 @@ export default function SocialMedia() {
           </div>
           
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

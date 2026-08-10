@@ -6,6 +6,7 @@ const streamings = [
   { name: "Globoplay", logo: "/imgs/globoplay.png", desc: "Novelas, filmes e séries originais." },
   { name: "Apple TV", logo: "/imgs/appletv.png", desc: "Produções exclusivas e originais Apple." }
 ];
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Combo() {
   return (
@@ -13,7 +14,7 @@ export default function Combo() {
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal delay={200} className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-12">
           
           <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 relative">
@@ -52,7 +53,7 @@ export default function Combo() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

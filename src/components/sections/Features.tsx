@@ -1,4 +1,5 @@
 import { Wifi, ShieldCheck, HeadphonesIcon } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
 // Removed unused stats array
 
@@ -25,7 +26,7 @@ export default function Features() {
     <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal direction="left" className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -122,7 +123,7 @@ export default function Features() {
           ))}
         </div>
 
-      </div>
+      </Reveal>
     </section>
   );
 }

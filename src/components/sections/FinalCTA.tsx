@@ -1,6 +1,7 @@
 import { MessageCircle, PhoneCall } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function FinalCTA() {
   return (
@@ -13,7 +14,7 @@ export default function FinalCTA() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--brand-blue)]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none mix-blend-overlay" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+      <Reveal direction="down" className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         
         <div className="relative mb-8">
            <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full" />
@@ -71,7 +72,7 @@ export default function FinalCTA() {
           </div>
 
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

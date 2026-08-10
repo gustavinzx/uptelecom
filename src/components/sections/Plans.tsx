@@ -2,6 +2,7 @@ import { Plus } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Reveal } from "@/components/ui/Reveal";
 
 const fibraPlans = [
   {
@@ -90,7 +91,7 @@ export default function Plans() {
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
       
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide drop-shadow-lg">
             Escolha o seu novo <span className="text-[var(--brand-blue)]">Plano</span>
@@ -130,7 +131,7 @@ export default function Plans() {
         <p className="text-center text-slate-400 text-sm mt-12 font-medium">
           Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-white hover:text-[var(--brand-blue)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

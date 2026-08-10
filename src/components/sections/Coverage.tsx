@@ -2,6 +2,7 @@ import { MapPin, Search } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Coverage() {
   const [cep, setCep] = useState("");
@@ -11,7 +12,7 @@ export default function Coverage() {
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal direction="right" className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-8">
@@ -67,7 +68,7 @@ export default function Coverage() {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

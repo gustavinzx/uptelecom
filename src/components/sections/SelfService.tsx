@@ -1,4 +1,5 @@
 import { FileText, CreditCard, Wrench, Smartphone } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
 const services = [
   { icon: FileText, title: "2ª Via de Boleto", desc: "Acesse e pague sua fatura de forma rápida e segura." },
@@ -16,7 +17,7 @@ export default function SelfService() {
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220]/60 to-transparent pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <Reveal className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-bebas text-5xl md:text-6xl mb-6 tracking-wide drop-shadow-sm">Sua Conta <span className="text-white/80">Na Palma da Mão</span></h2>
           <p className="text-xl max-w-2xl mx-auto font-medium text-white/90">
@@ -48,7 +49,7 @@ export default function SelfService() {
              <img src="/imgs/astro_5.png" alt="Mascote UP Telecom no App" className="relative z-10 w-full max-w-[450px] animate-float drop-shadow-2xl" />
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

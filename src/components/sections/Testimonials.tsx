@@ -1,4 +1,5 @@
 import { BadgeCheck } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 
 // Avaliações estáticas copiadas do perfil real (conforme solicitado para evitar custos de API)
 const reviews = [
@@ -45,7 +46,7 @@ export default function Testimonials() {
     <section id="avaliacoes" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_testimonials.jpg')" }}>
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
-      <div className="max-w-6xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-10">
+      <Reveal className="max-w-6xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-10">
         
         {/* Left Side (Title + Callout Card) */}
         <div className="w-full lg:w-1/3 flex flex-col gap-6">
@@ -120,7 +121,7 @@ export default function Testimonials() {
           </div>
 
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
