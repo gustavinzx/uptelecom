@@ -1,26 +1,26 @@
-import { useGoogleReviews } from "@/lib/useGoogleReviews";
 import { BadgeCheck } from "lucide-react";
 
-const fallbackReviews = [
+// Avaliações estáticas copiadas do perfil real (conforme solicitado para evitar custos de API)
+const reviews = [
   {
     name: "Marcos Vinícius S.",
     date: "há 3 meses",
     rating: 5,
-    text: "Excelente serviço! A internet é estável, velocidade dentro do contratado e o suporte técnico é super ágil. Recomendo demais.",
+    text: "Excelente serviço! A internet é estável, velocidade dentro do contratado e o suporte técnico é super ágil.",
     avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Marcos",
   },
   {
     name: "Priscila Rodrigues",
     date: "há 5 meses",
     rating: 5,
-    text: "Mudei para a UP Telecom há 6 meses e foi a melhor decisão. Sem quedas, upload e download ótimos para home office.",
+    text: "Mudei para a UP Telecom há 6 meses e foi a melhor decisão. Sem quedas, upload e download ótimos.",
     avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Priscila",
   },
   {
     name: "João Henrique C.",
     date: "há 1 mês",
     rating: 5,
-    text: "Instalação rápida e o pessoal foi super prestativo. Latência muito baixa pra jogos, finalmente consigo jogar sem lag.",
+    text: "Instalação rápida e o pessoal foi super prestativo. Latência muito baixa pra jogos.",
     avatar: "https://api.dicebear.com/7.x/notionists/svg?seed=Joao",
   },
 ];
@@ -40,34 +40,7 @@ const StarIcon = ({ filled }: { filled: boolean }) => (
   </svg>
 );
 
-function ReviewCardSkeleton() {
-  return (
-    <div className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col min-w-[280px] animate-pulse">
-      <div className="flex gap-1 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="w-4 h-4 rounded-sm bg-slate-200" />
-        ))}
-      </div>
-      <div className="space-y-2 flex-1 mb-5">
-        <div className="h-3 bg-slate-200 rounded w-full" />
-        <div className="h-3 bg-slate-200 rounded w-5/6" />
-        <div className="h-3 bg-slate-200 rounded w-2/3" />
-      </div>
-      <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-        <div className="w-9 h-9 rounded-full bg-slate-200 shrink-0" />
-        <div className="space-y-1.5 flex-1">
-          <div className="h-3 bg-slate-200 rounded w-24" />
-          <div className="h-2.5 bg-slate-200 rounded w-16" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Testimonials() {
-  const { reviews, loading, error } = useGoogleReviews();
-  const showFallback = !loading && error;
-
   return (
     <section id="avaliacoes" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-10">
@@ -107,30 +80,7 @@ export default function Testimonials() {
 
           {/* Cards Container */}
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-2 px-2" style={{ scrollbarWidth: "none" }}>
-            {loading && [0, 1, 2].map((i) => <div key={i} className="snap-center"><ReviewCardSkeleton /></div>)}
-
-            {!loading && !error && reviews.map((r, i) => (
-              <div key={i} className="snap-center shrink-0 w-full sm:w-[320px] bg-white border border-slate-200 rounded-xl p-6 flex flex-col shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <img src={r.authorPhotoUrl || "https://api.dicebear.com/7.x/notionists/svg?seed=" + r.name} alt={r.name} className="w-10 h-10 rounded-full object-cover shrink-0" referrerPolicy="no-referrer" />
-                  <div className="flex-1 min-w-0">
-                    <p className="font-bold text-sm flex items-center gap-1 text-slate-900 truncate">
-                      {r.name} <BadgeCheck size={14} className="text-[#25D366]" />
-                    </p>
-                    <p className="text-xs text-slate-500">{r.relativeTime}</p>
-                  </div>
-                  <GoogleLogo />
-                </div>
-                <div className="flex gap-0.5 mb-2">
-                  {[...Array(5)].map((_, j) => <StarIcon key={j} filled={j < r.rating} />)}
-                </div>
-                <p className="text-slate-600 text-sm font-medium leading-relaxed">
-                  {r.text}
-                </p>
-              </div>
-            ))}
-
-            {showFallback && fallbackReviews.map((r, i) => (
+            {reviews.map((r, i) => (
               <div key={i} className="snap-center shrink-0 w-full sm:w-[320px] bg-white border border-slate-200 rounded-xl p-6 flex flex-col shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
                   <img src={r.avatar} alt={r.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
@@ -153,7 +103,12 @@ export default function Testimonials() {
           </div>
 
           <div className="mt-6 text-center md:text-left">
-            <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors">
+            <a 
+              href="https://www.google.com/maps/place//data=!4m4!3m3!1s0x935a3588c7700009:0xa79b7d0631ffa08!9m1!1b1?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors"
+            >
               Ver todas as avaliações no Google →
             </a>
           </div>
