@@ -60,16 +60,16 @@ export default function Navbar() {
           : "bg-transparent backdrop-blur-sm border-transparent"
       )}>
         {/* Logo */}
-        <a href="#hero" className="flex items-center justify-center shrink-0 group relative h-10 overflow-hidden">
+        <a href="#hero" className="flex items-center justify-center shrink-0 group relative w-[160px] h-[40px] overflow-hidden">
           <img 
-            src="/imgs/logo_up_horizontal.png" 
+            src="/imgs/imagemtelecom.png" 
             alt="UP Telecom" 
-            className="h-full w-auto object-contain z-10 group-hover:scale-105 transition-transform duration-500" 
+            className="w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain z-10 group-hover:scale-105 transition-transform duration-500" 
           />
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 font-anton text-xl pt-2">
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-bold">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
@@ -77,7 +77,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "relative transition-all duration-300 tracking-wider group-hover:text-white py-1",
+                  "relative transition-all duration-300 uppercase tracking-wider text-sm group-hover:text-white py-2",
                   isActive
                     ? "text-[var(--brand-blue)] drop-shadow-[0_0_8px_rgba(0,85,255,0.5)]"
                     : "text-slate-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
@@ -100,7 +100,7 @@ export default function Navbar() {
             href="https://sistema.upconexion.com.br/central_assinante_web/login"
             target="_blank"
             rel="noreferrer"
-            className="relative inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] text-white px-8 py-2 text-lg font-anton transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.4)] hover:shadow-[0_0_30px_rgba(230,0,0,0.6)] hover:-translate-y-1 overflow-hidden group pt-3"
+            className="relative inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] text-white px-8 py-3 text-sm font-bold transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.4)] hover:shadow-[0_0_30px_rgba(230,0,0,0.6)] hover:-translate-y-1 overflow-hidden group"
           >
             <span className="relative z-10 tracking-wide uppercase">Consultar viabilidade</span>
             {/* Shine effect */}
@@ -116,7 +116,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#0b1220]/95 backdrop-blur-xl border-white/10 flex flex-col">
               <SheetTitle className="text-left mb-10 mt-4 flex items-center gap-3">
-                <img src="/imgs/logo_up_horizontal.png" alt="UP Telecom" className="h-10 w-auto" />
+                <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-16 w-auto" />
               </SheetTitle>
               <nav className="flex flex-col gap-6 mt-4">
                 {navLinks.map((link) => {
@@ -126,7 +126,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={cn(
-                          "font-anton text-2xl tracking-wider transition-colors pt-1",
+                          "text-lg font-bold uppercase tracking-wider transition-colors",
                           isActive ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
                         )}
                       >
@@ -139,7 +139,7 @@ export default function Navbar() {
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
                   rel="noreferrer"
-                  className="relative overflow-hidden text-xl font-anton text-white bg-[var(--brand-primary)] px-4 py-3 rounded-full text-center mt-auto mb-8 transition-all shadow-[0_0_20px_rgba(230,0,0,0.4)] pt-4"
+                  className="relative overflow-hidden text-lg font-bold text-white bg-[var(--brand-primary)] px-4 py-4 rounded-full text-center mt-auto mb-8 transition-all shadow-[0_0_20px_rgba(230,0,0,0.4)]"
                 >
                   <span className="relative z-10 tracking-wide uppercase">Consultar viabilidade</span>
                 </a>
