@@ -2,7 +2,7 @@ import { Smartphone, Share2, MonitorPlay } from "lucide-react";
 
 export default function SocialMedia() {
   return (
-    <section className="py-24 bg-[#0b1220] border-t border-white/5">
+    <section id="redes-sociais" className="py-24 bg-[#0b1220] border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           

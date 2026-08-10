@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 export default function FinalCTA() {
   return (
     <section className="py-24 bg-[#0b1220] relative overflow-hidden">
+      {/* Background Blobs for Visual Interest */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[var(--brand-primary)]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--brand-blue)]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none mix-blend-overlay" />
+
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         
         <div className="relative mb-8">

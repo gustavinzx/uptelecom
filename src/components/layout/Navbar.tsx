@@ -57,12 +57,12 @@ export default function Navbar() {
           : "bg-transparent backdrop-blur-sm border-transparent"
       )}>
         {/* Logo */}
-        <a href="#hero" className="flex items-center shrink-0 group relative overflow-visible h-10 w-28">
+        <a href="#hero" className="flex items-center shrink-0 group relative h-10 w-[140px]">
           <div className="absolute inset-0 bg-[var(--brand-blue)] blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
           <img 
             src="/imgs/imagemtelecom.png" 
             alt="UP Telecom" 
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-[180px] max-w-none origin-left scale-125 group-hover:scale-150 transition-transform duration-500 z-10" 
+            className="w-full h-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-500" 
           />
         </a>
 
