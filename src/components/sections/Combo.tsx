@@ -35,23 +35,27 @@ export default function Combo() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {streamings.map((s) => (
-            <div key={s.name} className="rounded-xl bg-white p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-              <div className="h-16 flex items-center justify-center mb-6">
-                <img src={s.logo} alt={s.name} className="max-h-full max-w-[120px] object-contain drop-shadow-sm" />
+        <div className="relative overflow-hidden w-full group -mx-6 px-6 py-4">
+          <div className="flex gap-6 min-w-max animate-[marquee_25s_linear_infinite] motion-reduce:animate-none">
+            {[...streamings, ...streamings, ...streamings, ...streamings].map((s, idx) => (
+              <div key={idx} className="w-[280px] rounded-xl bg-white p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col shrink-0">
+                <div className="h-16 flex items-center justify-center mb-6">
+                  <img src={s.logo} alt={s.name} className="max-h-full max-w-[120px] object-contain drop-shadow-sm" />
+                </div>
+                <p className="text-sm text-gray-500 mb-8 flex-1 font-medium leading-relaxed">{s.desc}</p>
+                <a 
+                  href="#planos"
+                  className="text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors uppercase tracking-wider py-2 border-t border-gray-100 block w-full min-h-[44px] flex items-center justify-center"
+                >
+                  Quero {s.name}
+                </a>
               </div>
-              <p className="text-sm text-gray-500 mb-8 flex-1 font-medium leading-relaxed">{s.desc}</p>
-              <a 
-                href="https://wa.me/5561981765721" 
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors uppercase tracking-wider py-2 border-t border-gray-100 block w-full"
-              >
-                Quero {s.name}
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {/* Fades na borda */}
+          <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#0b1220] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#0b1220] to-transparent z-10 pointer-events-none" />
         </div>
       </Reveal>
     </section>

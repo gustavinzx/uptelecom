@@ -3,12 +3,14 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 
 export default function Coverage() {
   const [cep, setCep] = useState("");
 
   return (
-    <section id="cobertura" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_coverage.jpg')" }}>
+    <section id="cobertura" className="py-24 relative overflow-hidden bg-[#0b1220]">
+      <SectionBackground variant="map" />
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       

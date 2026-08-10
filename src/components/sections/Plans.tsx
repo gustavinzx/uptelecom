@@ -1,8 +1,28 @@
+import { useState, useRef } from "react";
 import { Plus } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionBackground } from "@/components/ui/SectionBackground";
+
+function SpeedGauge({ value, max, color }: { value: number; max: number; color: string }) {
+  const percentage = Math.min(value / max, 1);
+  const circumference = 2 * Math.PI * 40; // raio 40
+  const offset = circumference * (1 - percentage * 0.75); // arco de 270°, não círculo completo
+
+  return (
+    <svg viewBox="0 0 100 100" className="w-24 h-24 shrink-0 transition-transform hover:scale-105">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="var(--surface-alt)" strokeWidth="8"
+        strokeDasharray={circumference * 0.75} strokeDashoffset="0"
+        transform="rotate(135 50 50)" strokeLinecap="round" />
+      <circle cx="50" cy="50" r="40" fill="none" stroke={color} strokeWidth="8"
+        strokeDasharray={circumference * 0.75} strokeDashoffset={offset}
+        transform="rotate(135 50 50)" strokeLinecap="round"
+        style={{ transition: "stroke-dashoffset 0.8s ease" }} />
+    </svg>
+  );
+}
 
 const fibraPlans = [
   {
@@ -85,11 +105,9 @@ const comboPlans = [
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_plans_family.jpg')" }}>
+    <section id="planos" className="py-24 text-white relative overflow-hidden bg-[#0b1220]">
+      <SectionBackground variant="grid" />
       {/* Dark Overlay with smooth top/bottom gradients */}
-      <div className="absolute inset-0 bg-[#0b1220]/75 backdrop-blur-[2px] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
       
       <Reveal className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -137,17 +155,44 @@ export default function Plans() {
 }
 
 function PlanCard({ plan }: { plan: any }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const isPopular = plan.popular;
+
   return (
     <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
       className={cn(
-        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 border bg-white hover:-translate-y-2 hover:shadow-xl",
-        plan.popular 
+        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 border bg-white hover:-translate-y-2 hover:shadow-xl group overflow-hidden",
+        isPopular 
           ? "border-[var(--brand-primary)]/30 shadow-[0_20px_50px_rgba(169,10,52,0.1)] -translate-y-2 hover:-translate-y-4 hover:shadow-[0_25px_60px_rgba(169,10,52,0.15)]" 
           : "border-slate-200 shadow-sm"
       )}
     >
+      {/* Spotlight Effect for popular plan */}
+      {isPopular && (
+        <div 
+          className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(230,0,0,0.06), transparent 40%)`
+          }}
+        />
+      )}
+
       {/* Top Badge */}
-      <div className="flex justify-between items-start mb-6">
+      <div className="flex justify-between items-start mb-6 relative z-10">
         <h3 className="font-anton text-2xl text-slate-900 tracking-wide">
           {plan.name}
         </h3>
@@ -158,14 +203,24 @@ function PlanCard({ plan }: { plan: any }) {
         )}
       </div>
       
-      {/* Speed Display */}
-      <div className="flex items-end gap-2 mb-6">
-        <span className="font-anton text-6xl text-[var(--brand-primary)] leading-none tracking-normal">
-          {plan.speed}
-        </span>
-        <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-black mb-1 uppercase tracking-wider">
-          mega
-        </span>
+      {/* Speed Display & Gauge */}
+      <div className="flex items-center gap-4 mb-6 relative z-10">
+        <SpeedGauge 
+          value={parseInt(plan.speed)} 
+          max={1000} 
+          color={isPopular ? "var(--brand-primary)" : "var(--brand-blue)"} 
+        />
+        <div className="flex items-end gap-1">
+          <span className={cn(
+            "font-anton text-6xl leading-none tracking-normal",
+            isPopular ? "text-[var(--brand-primary)]" : "text-[var(--brand-blue)]"
+          )}>
+            {plan.speed}
+          </span>
+          <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-black mb-1 uppercase tracking-wider">
+            mega
+          </span>
+        </div>
       </div>
 
       {/* Discount / Full Price */}
@@ -211,7 +266,7 @@ function PlanCard({ plan }: { plan: any }) {
         href="#cobertura"
         className={cn(
           buttonVariants({ size: "lg" }),
-          "w-full h-14 rounded-full font-black text-lg transition-all",
+          "relative z-10 w-full min-h-[44px] h-14 rounded-full font-black text-lg transition-all",
           "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg shadow-red-500/20 hover:-translate-y-0.5 font-anton text-2xl tracking-wider pt-1"
         )}
       >

@@ -1,5 +1,7 @@
 import { Wifi, ShieldCheck, HeadphonesIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionBackground } from "@/components/ui/SectionBackground";
+import { CountUp } from "@/components/ui/CountUp";
 
 // Removed unused stats array
 
@@ -23,7 +25,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
+    <section id="vantagens" className="py-24 relative overflow-hidden bg-[#0b1220]">
+      <SectionBackground variant="dots" />
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       <Reveal direction="left" className="max-w-6xl mx-auto px-6 relative z-10">
@@ -66,7 +69,7 @@ export default function Features() {
           <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden shadow-xl hover:border-[var(--brand-blue)]/50 hover:shadow-[0_0_30px_rgba(0,85,255,0.2)] hover:-translate-y-2 transition-all duration-300 group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-blue)]/20 blur-2xl group-hover:bg-[var(--brand-blue)]/30 transition-all" />
             <p className="font-anton text-5xl text-[var(--brand-blue)] leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
-              99.9%
+              <CountUp end={99.9} decimals={1} suffix="%" duration={1500} />
             </p>
             <p className="text-sm font-bold text-slate-300 uppercase tracking-widest">
               Uptime<br/>Garantido

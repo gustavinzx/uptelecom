@@ -10,12 +10,10 @@ import SelfService from "./components/sections/SelfService";
 import FinalCTA from "./components/sections/FinalCTA";
 import SocialMedia from "./components/sections/SocialMedia";
 import { WhatsAppButton } from "./components/ui/WhatsAppButton";
-import { CleanBackground } from "./components/ui/CleanBackground";
 
 function App() {
   return (
     <div className="min-h-screen bg-[#0b1220] flex flex-col font-sans relative">
-      <CleanBackground />
       <Navbar />
       <main className="flex-1 overflow-hidden">
         <Hero />

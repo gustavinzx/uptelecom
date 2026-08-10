@@ -111,7 +111,7 @@ export default function Navbar() {
         {/* Mobile Nav */}
         <div className="lg:hidden ml-auto">
           <Sheet>
-            <SheetTrigger className="p-2 -mr-2 text-white">
+            <SheetTrigger className="p-2 -mr-2 text-white flex items-center justify-center min-w-[44px] min-h-[44px]">
               <Menu size={28} />
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#0b1220]/95 backdrop-blur-xl border-white/10 flex flex-col">
