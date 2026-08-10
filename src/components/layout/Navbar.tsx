@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/com
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Início", href: "#", active: true },
+  { name: "Início", href: "#hero" },
   { name: "Planos", href: "#planos" },
   { name: "Empresa", href: "#vantagens" },
   { name: "Avaliações", href: "#avaliacoes" },
@@ -13,6 +13,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,26 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -70% 0px" } // Adjust to trigger when section is in top part of screen
+    );
+
+    const sections = navLinks.map(link => document.getElementById(link.href.replace('#', ''))).filter(Boolean);
+    sections.forEach(sec => sec && observer.observe(sec));
+
+    return () => {
+      sections.forEach(sec => sec && observer.unobserve(sec));
+    };
   }, []);
 
   return (
@@ -33,32 +54,35 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         {/* Logo */}
-        <a href="#" className="flex items-center shrink-0 group relative">
+        <a href="#hero" className="flex items-center shrink-0 group relative">
           <div className="absolute inset-0 bg-[var(--brand-blue)] blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
-          <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-16 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300" />
+          <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-20 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300" />
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-bold">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "relative transition-all duration-300 uppercase tracking-wider text-sm group-hover:text-white py-2",
-                link.active
-                  ? "text-[var(--brand-blue)] drop-shadow-[0_0_8px_rgba(0,85,255,0.5)]"
-                  : "text-slate-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
-              )}
-            >
-              {link.name}
-              {/* Animated underline */}
-              <span className={cn(
-                "absolute -bottom-1 left-0 h-0.5 bg-[var(--brand-blue)] transition-all duration-300",
-                link.active ? "w-full shadow-[0_0_10px_rgba(0,85,255,0.8)]" : "w-0 group-hover:w-full"
-              )} />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace('#', '');
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "relative transition-all duration-300 uppercase tracking-wider text-sm group-hover:text-white py-2",
+                  isActive
+                    ? "text-[var(--brand-blue)] drop-shadow-[0_0_8px_rgba(0,85,255,0.5)]"
+                    : "text-slate-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                )}
+              >
+                {link.name}
+                {/* Animated underline */}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-[var(--brand-blue)] transition-all duration-300",
+                  isActive ? "w-full shadow-[0_0_10px_rgba(0,85,255,0.8)]" : "w-0 group-hover:w-full"
+                )} />
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop Button */}
@@ -83,22 +107,25 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#0b1220]/95 backdrop-blur-xl border-white/10 flex flex-col">
               <SheetTitle className="text-left mb-10 mt-4 flex items-center gap-3">
-                <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-14 w-auto" />
+                <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-16 w-auto" />
               </SheetTitle>
               <nav className="flex flex-col gap-6 mt-4">
-                {navLinks.map((link) => (
-                  <SheetClose asChild key={link.name}>
-                    <a
-                      href={link.href}
-                      className={cn(
-                        "text-lg font-bold uppercase tracking-wider transition-colors",
-                        link.active ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
-                      )}
-                    >
-                      {link.name}
-                    </a>
-                  </SheetClose>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = activeSection === link.href.replace('#', '');
+                  return (
+                    <SheetClose asChild key={link.name}>
+                      <a
+                        href={link.href}
+                        className={cn(
+                          "text-lg font-bold uppercase tracking-wider transition-colors",
+                          isActive ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
+                        )}
+                      >
+                        {link.name}
+                      </a>
+                    </SheetClose>
+                  );
+                })}
                 <a
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
