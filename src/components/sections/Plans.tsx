@@ -84,26 +84,26 @@ const comboPlans = [
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 bg-[#020617] relative overflow-hidden">
-      {/* Glow effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[var(--brand-primary)]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section id="planos" className="py-24 bg-[#f8fafc] relative overflow-hidden">
+      {/* Light subtle glow effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[var(--brand-primary)]/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white uppercase tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900 uppercase tracking-tight">
             Escolha o seu novo <span className="text-[var(--brand-primary)]">Plano</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium">
             Descubra os melhores planos para turbinar sua navegação, filmes, jogos e rotina digital com mais velocidade e estabilidade.
           </p>
         </div>
 
         <Tabs defaultValue="fibra" className="w-full max-w-5xl mx-auto flex flex-col items-center">
-          <TabsList className="h-16 w-full max-w-md bg-[#0f172a] rounded-full p-2 mb-16 shadow-inner border border-white/5">
-            <TabsTrigger value="fibra" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-gray-400 transition-all">
+          <TabsList className="h-16 w-full max-w-md bg-white rounded-full p-2 mb-16 shadow-sm border border-slate-200">
+            <TabsTrigger value="fibra" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-slate-500 transition-all">
               Residencial
             </TabsTrigger>
-            <TabsTrigger value="combo" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-gray-400 transition-all">
+            <TabsTrigger value="combo" className="w-1/2 rounded-full h-full text-lg font-bold data-[state=active]:bg-[var(--brand-primary)] data-[state=active]:text-white text-slate-500 transition-all">
               Combos
             </TabsTrigger>
           </TabsList>
@@ -125,8 +125,8 @@ export default function Plans() {
           </TabsContent>
         </Tabs>
         
-        <p className="text-center text-gray-500 text-sm mt-12 font-medium">
-          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-white hover:text-[var(--brand-primary)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
+        <p className="text-center text-slate-500 text-sm mt-12 font-medium">
+          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-slate-900 hover:text-[var(--brand-primary)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
         </p>
       </div>
     </section>
@@ -137,19 +137,19 @@ function PlanCard({ plan }: { plan: any }) {
   return (
     <div
       className={cn(
-        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-2 border",
+        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 border bg-white",
         plan.popular 
-          ? "bg-[#0b1426] border-[var(--brand-primary)]/50 shadow-2xl shadow-[var(--brand-primary)]/10" 
-          : "bg-[#0b1426] border-white/5 hover:border-white/10"
+          ? "border-[var(--brand-primary)]/30 shadow-[0_20px_50px_rgba(169,10,52,0.1)] -translate-y-2" 
+          : "border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1"
       )}
     >
       {/* Top Badge */}
       <div className="flex justify-between items-start mb-6">
-        <h3 className="text-lg font-bold text-white">
+        <h3 className="text-xl font-black text-slate-900 uppercase">
           {plan.name}
         </h3>
         {plan.badge && (
-          <span className="bg-[#22c55e]/20 text-[#4ade80] px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+          <span className="bg-[#22c55e]/10 text-[#16a34a] px-3 py-1 rounded-full text-xs font-bold tracking-wide">
             {plan.badge}
           </span>
         )}
@@ -157,46 +157,46 @@ function PlanCard({ plan }: { plan: any }) {
       
       {/* Speed Display */}
       <div className="flex items-end gap-2 mb-6">
-        <span className="text-7xl font-black text-white leading-none tracking-tighter">
+        <span className="text-7xl font-black text-[var(--brand-primary)] leading-none tracking-tighter">
           {plan.speed}
         </span>
-        <span className="bg-[#22c55e] text-[#020617] px-3 py-1 rounded-full text-sm font-black mb-1">
+        <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-black mb-1 uppercase tracking-wider">
           mega
         </span>
       </div>
 
       {/* Discount / Full Price */}
       {plan.fullPrice && (
-        <div className="bg-white/5 inline-flex px-3 py-1 rounded-full text-xs font-semibold text-gray-400 w-max mb-4">
+        <div className="bg-slate-50 inline-flex px-3 py-1 rounded-full text-xs font-bold text-slate-400 w-max mb-4">
           Apenas
         </div>
       )}
 
       {/* Price */}
-      <div className="flex items-start gap-1 text-white mb-6">
+      <div className="flex items-start gap-1 text-slate-900 mb-6">
         <span className="text-xl font-bold mt-2">R$</span>
         <span className="text-6xl font-black tracking-tighter leading-none">
           {plan.price}
         </span>
         <div className="flex flex-col items-start justify-start">
           <span className="text-2xl font-bold leading-none">,{plan.cents}</span>
-          <span className="text-sm font-bold text-gray-400 mt-1">/mês</span>
+          <span className="text-sm font-bold text-slate-500 mt-1">/mês</span>
         </div>
       </div>
 
       {/* Free Installation Pill */}
-      <div className="bg-[#22c55e] text-[#020617] px-4 py-2 rounded-full text-sm font-black w-max mb-8 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-        Instalação gratuita
+      <div className="bg-[#22c55e] text-white px-4 py-2 rounded-full text-sm font-black w-max mb-8 shadow-sm">
+        INSTALAÇÃO GRATUITA
       </div>
 
       {/* Features */}
       <ul className="space-y-3 mb-10 flex-1">
         {plan.features.map((feature: string) => (
           <li key={feature} className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <Plus size={12} className="text-white" />
+            <div className="w-5 h-5 rounded-full bg-[var(--brand-primary)]/10 flex items-center justify-center shrink-0">
+              <Plus size={12} className="text-[var(--brand-primary)] font-bold" />
             </div>
-            <span className="font-semibold text-gray-300 text-sm">
+            <span className="font-semibold text-slate-700 text-sm">
               {feature}
             </span>
           </li>
@@ -209,7 +209,7 @@ function PlanCard({ plan }: { plan: any }) {
         className={cn(
           buttonVariants({ size: "lg" }),
           "w-full h-14 rounded-full font-black text-lg transition-all",
-          "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg hover:shadow-[var(--brand-primary)]/40 hover:-translate-y-0.5"
+          "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/20 hover:-translate-y-0.5"
         )}
       >
         Contratar

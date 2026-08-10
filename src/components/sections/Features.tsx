@@ -27,7 +27,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 bg-white">
+    <section id="vantagens" className="py-24 bg-[#0b1220]">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Asymmetric hero grid */}
@@ -42,7 +42,7 @@ export default function Features() {
             }} />
             <div className="relative z-10">
               <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-4">Tecnologia de ponta</p>
-              <h2 className="text-5xl md:text-6xl font-black leading-none mb-4">
+              <h2 className="text-5xl md:text-6xl font-black leading-none mb-4 text-white">
                 100%<br />Fibra<br />Própria
               </h2>
               <p className="text-white/80 text-lg font-medium max-w-md">
@@ -52,7 +52,7 @@ export default function Features() {
             <div className="relative z-10 mt-8">
               <a
                 href="#planos"
-                className="inline-flex items-center gap-2 bg-white text-[var(--brand-primary)] px-6 py-3 rounded-md font-bold text-sm uppercase tracking-wide hover:bg-white/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-[var(--brand-primary)] px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-gray-100 transition-colors"
               >
                 Ver planos
               </a>
@@ -62,9 +62,9 @@ export default function Features() {
           {/* Stats column */}
           <div className="flex flex-col gap-6">
             {stats.map((s) => (
-              <div key={s.value} className="flex-1 bg-gray-50 border border-gray-100 rounded-xl px-8 py-6 flex flex-col justify-center">
+              <div key={s.value} className="flex-1 bg-[#101a30] border border-slate-800 rounded-xl px-8 py-6 flex flex-col justify-center">
                 <p className="text-4xl font-black text-[var(--brand-primary)] leading-none mb-1">{s.value}</p>
-                <p className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">{s.label}</p>
+                <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}
           </div>
@@ -75,13 +75,13 @@ export default function Features() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="group p-8 rounded-xl bg-gray-50 border border-transparent hover:border-gray-200 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group p-8 rounded-xl bg-[#101a30] border border-slate-800 hover:border-slate-700 hover:bg-[#15233f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className="w-12 h-12 rounded-lg bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] flex items-center justify-center mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] flex items-center justify-center mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all duration-300">
                 <f.icon size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-[var(--text-main)]">{f.title}</h3>
-              <p className="text-[var(--text-muted)] font-medium leading-relaxed flex-1">{f.desc}</p>
+              <h3 className="text-xl font-bold mb-3 text-white">{f.title}</h3>
+              <p className="text-slate-400 font-medium leading-relaxed flex-1">{f.desc}</p>
             </div>
           ))}
         </div>

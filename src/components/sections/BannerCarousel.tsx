@@ -106,6 +106,14 @@ export default function BannerCarousel() {
         <CarouselPrevious className="hidden md:flex left-6 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/20 text-white shadow-md" />
         <CarouselNext className="hidden md:flex right-6 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/20 text-white shadow-md" />
       </Carousel>
+
+      <div className="hidden md:block absolute bottom-8 right-8 md:bottom-12 md:right-12 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-6 max-w-xs z-20 border-t-4 border-[#a90a34]">
+        <p className="text-xs text-gray-500 uppercase tracking-wider mb-1 font-bold">Planos a partir de</p>
+        <p className="text-4xl font-black text-[#151515] leading-none mb-2">R$ 79<span className="text-base font-medium text-gray-500">/mês</span></p>
+        <div className="bg-slate-100 rounded-md py-1 px-2 inline-block">
+          <p className="text-xs text-[#a90a34] font-bold">+ velocidade + estabilidade</p>
+        </div>
+      </div>
     </section>
   );
 }
