@@ -38,7 +38,7 @@ export function FiberBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-screen opacity-60">
+    <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden mix-blend-screen opacity-80">
       {fibers.map((fiber) => (
         <div
           key={fiber.id}
