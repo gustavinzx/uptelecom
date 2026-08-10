@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 const posts = [
   {
     id: 1,
-    img: "/imgs/blog1.jpg",
+    img: "/imgs/blog_fiber_macro.jpg",
     date: "17 de fevereiro de 2022",
     title: "Quais são as principais características da fibra óptica?",
     excerpt:
@@ -28,7 +28,7 @@ const posts = [
   },
   {
     id: 2,
-    img: "/imgs/blog2.jpg",
+    img: "/imgs/blog_patch_panel.jpg",
     date: "3 de dezembro de 2019",
     title: "Conheça as principais conexões de internet",
     excerpt:
@@ -50,7 +50,7 @@ const posts = [
   },
   {
     id: 3,
-    img: "/imgs/blog3.jpg",
+    img: "/imgs/blog_wifi_waves.jpg",
     date: "25 de julho de 2019",
     title: "WiFi – qual a diferença entre 2,4 GHz e 5 GHz ?",
     excerpt:
@@ -71,7 +71,7 @@ const posts = [
   },
   {
     id: 4,
-    img: "/imgs/blog4.jpg",
+    img: "/imgs/blog_keyboard_esc.jpg",
     date: "23 de julho de 2019",
     title: "Não esqueça de fazer logout!",
     excerpt:
@@ -114,9 +114,9 @@ export default function Blog() {
             <article
               key={p.id}
               onClick={() => setSelectedPost(p)}
-              className="group cursor-pointer rounded-lg overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-black/5 flex flex-col"
+              className="group cursor-pointer rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-black/5 flex flex-col"
             >
-              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden bg-gray-100">
+              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden rounded-t-2xl bg-gray-100">
                 <img
                   src={p.img}
                   alt={p.title}
