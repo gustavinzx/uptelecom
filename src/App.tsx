@@ -5,7 +5,6 @@ import Plans from "./components/sections/Plans";
 import Combo from "./components/sections/Combo";
 import Features from "./components/sections/Features";
 import Testimonials from "./components/sections/Testimonials";
-import Blog from "./components/sections/Blog";
 import Coverage from "./components/sections/Coverage";
 import SelfService from "./components/sections/SelfService";
 import FinalCTA from "./components/sections/FinalCTA";
@@ -21,7 +20,6 @@ function App() {
         <Combo />
         <Features />
         <Testimonials />
-        <Blog />
         <Coverage />
         <SelfService />
         <FinalCTA />

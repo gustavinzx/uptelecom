@@ -7,7 +7,6 @@ const navLinks = [
   { name: "Início", href: "#hero" },
   { name: "Planos", href: "#planos" },
   { name: "Avaliações", href: "#avaliacoes" },
-  { name: "Blog", href: "#blog" },
   { name: "Contato", href: "#rodape" },
   { name: "Redes Sociais", href: "#redes-sociais" },
 ];
