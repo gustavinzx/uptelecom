@@ -21,15 +21,7 @@ export function NetworkBackground() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Set canvas to full screen
-    const setSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      init(); // Reinitialize particles on resize to maintain density
-    };
-    
-    setSize();
-    window.addEventListener('resize', setSize);
+
 
     // Particle class
     class Particle {
@@ -134,7 +126,16 @@ export function NetworkBackground() {
       }
     };
 
-    init();
+    // Set canvas to full screen
+    const setSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init(); // Reinitialize particles on resize to maintain density
+    };
+    
+    setSize();
+    window.addEventListener('resize', setSize);
+
     animate();
 
     return () => {
