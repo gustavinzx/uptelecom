@@ -24,7 +24,7 @@ export default function SocialMedia() {
               <div className="relative shrink-0">
                 <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-full blur opacity-75"></div>
                 <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center border-2 border-[#0b1220] overflow-hidden">
-                  <img src="/imgs/IconSite.png" alt="UP Telecom" className="w-[60%] h-auto object-contain" />
+                  <img src="/imgs/logo_insta_up.jpg" alt="UP Telecom" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div>
