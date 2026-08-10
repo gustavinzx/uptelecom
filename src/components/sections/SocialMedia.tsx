@@ -2,8 +2,11 @@ import { Smartphone, Share2, MonitorPlay } from "lucide-react";
 
 export default function SocialMedia() {
   return (
-    <section id="redes-sociais" className="py-24 bg-[#0b1220] border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="redes-sociais" className="py-24 border-t border-white/5 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[#0b1220]/80 backdrop-blur-[2px] pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Text & Links Side */}

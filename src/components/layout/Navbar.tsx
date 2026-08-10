@@ -33,14 +33,18 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-30% 0px -70% 0px" } // Adjust to trigger when section is in top part of screen
+      { rootMargin: "-20% 0px -50% 0px" } // Adjust to trigger when section is in top part of screen
     );
 
     const sections = navLinks.map(link => document.getElementById(link.href.replace('#', ''))).filter(Boolean);
-    sections.forEach(sec => sec && observer.observe(sec));
+    sections.forEach(sec => {
+      if (sec) observer.observe(sec);
+    });
 
     return () => {
-      sections.forEach(sec => sec && observer.unobserve(sec));
+      sections.forEach(sec => {
+        if (sec) observer.unobserve(sec);
+      });
     };
   }, []);
 

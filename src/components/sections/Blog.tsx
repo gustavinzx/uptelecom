@@ -96,7 +96,9 @@ export default function Blog() {
   const [selectedPost, setSelectedPost] = useState<typeof posts[0] | null>(null);
 
   return (
-    <section id="blog" className="py-24 bg-[#0b1220] relative overflow-hidden">
+    <section id="blog" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_combo_hq.jpg')" }}>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[#0b1220]/85 backdrop-blur-[2px] pointer-events-none" />
       {/* Background Blobs for Visual Interest */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--brand-blue)]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[var(--brand-primary)]/10 rounded-full blur-[100px] pointer-events-none" />
