@@ -68,12 +68,13 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/70 to-transparent z-10" />
 
                 {/* Content Container */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col justify-center">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col pt-32 pb-16 md:pt-40 md:pb-24">
                   <div className="w-full md:w-3/5 lg:w-[50%]">
                     
-                    <span className="inline-block py-1.5 px-4 rounded-full bg-[var(--brand-blue)]/20 border border-[var(--brand-blue)]/30 text-[var(--brand-blue)] text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(0,85,255,0.2)]">
-                      ● Ultravelocidade para a família
-                    </span>
+                    <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-[var(--brand-blue)]/20 border border-[var(--brand-blue)]/30 text-[var(--brand-blue)] text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(0,85,255,0.2)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-blue)]" />
+                      <span>Ultravelocidade para a família</span>
+                    </div>
                     
                     <h1 className="font-bebas text-5xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-normal mb-8 drop-shadow-xl">
                       {slide.title}
@@ -86,17 +87,17 @@ export default function Hero() {
                     <div className="flex flex-col sm:flex-row gap-5">
                       <a
                         href="#planos"
-                        className="relative inline-flex items-center justify-center rounded-full bg-[var(--brand-blue)] text-white px-10 py-4 text-lg font-bebas tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_30px_rgba(0,85,255,0.6)] hover:-translate-y-1 overflow-hidden group"
+                        className="relative inline-flex items-center justify-center rounded-full bg-[var(--brand-blue)] text-white px-10 py-4 text-lg font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(0,85,255,0.4)] hover:shadow-[0_0_30px_rgba(0,85,255,0.6)] hover:-translate-y-1 overflow-hidden group"
                       >
-                        <span className="relative z-10 pt-1">Ver Planos</span>
+                        <span className="relative z-10">Ver Planos</span>
                         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out_infinite]" />
                       </a>
                       
                       <a
                         href="#cobertura"
-                        className="relative inline-flex items-center justify-center rounded-full border-2 border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white px-10 py-4 text-lg font-bebas tracking-wide transition-all duration-300 backdrop-blur-md"
+                        className="relative inline-flex items-center justify-center rounded-full border-2 border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 text-white px-10 py-4 text-lg font-bold tracking-wide transition-all duration-300 backdrop-blur-md"
                       >
-                        <span className="pt-1">Assinar Agora</span>
+                        <span className="relative z-10">Assinar Agora</span>
                       </a>
                     </div>
                   </div>
@@ -137,9 +138,9 @@ export default function Hero() {
           
           <a 
             href="#planos"
-            className="w-full flex items-center justify-center h-14 rounded-full bg-white text-black font-bebas text-xl tracking-wide hover:bg-slate-200 transition-colors shadow-lg"
+            className="w-full flex items-center justify-center h-14 rounded-full bg-white text-black font-bold text-lg hover:bg-slate-200 transition-colors shadow-lg"
           >
-            <span className="pt-1">Ver todos os planos</span>
+            <span>Ver todos os planos</span>
           </a>
         </div>
       </div>

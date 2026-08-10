@@ -62,11 +62,10 @@ export default function Navbar() {
       )}>
         {/* Logo */}
         <a href="#hero" className="flex items-center justify-center shrink-0 group relative w-[160px] h-[40px] overflow-hidden">
-          <div className="absolute inset-0 bg-[var(--brand-blue)] blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
           <img 
             src="/imgs/imagemtelecom.png" 
             alt="UP Telecom" 
-            className="w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain z-10 group-hover:scale-110 transition-transform duration-500" 
+            className="w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain z-10 group-hover:scale-105 transition-transform duration-500" 
           />
         </a>
 
