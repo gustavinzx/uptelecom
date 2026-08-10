@@ -21,7 +21,7 @@ export default function FinalCTA() {
            <img src="/imgs/astro_3.png" alt="Mascote UP Telecom Assinando" className="relative z-10 w-full max-w-[200px] animate-float drop-shadow-2xl mx-auto" />
         </div>
 
-        <h2 className="font-bebas text-6xl md:text-7xl mb-6 text-white tracking-wide">
+        <h2 className="font-anton text-6xl md:text-7xl mb-6 text-white tracking-wide">
           Pronto para ser <span className="text-[var(--brand-blue)] drop-shadow-md">Ultra?</span>
         </h2>
           <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">

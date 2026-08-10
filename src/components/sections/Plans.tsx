@@ -93,7 +93,7 @@ export default function Plans() {
       
       <Reveal className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide drop-shadow-lg">
+          <h2 className="font-anton text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide drop-shadow-lg">
             Escolha o seu novo <span className="text-[var(--brand-blue)]">Plano</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-medium">
@@ -148,7 +148,7 @@ function PlanCard({ plan }: { plan: any }) {
     >
       {/* Top Badge */}
       <div className="flex justify-between items-start mb-6">
-        <h3 className="font-bebas text-3xl text-slate-900 tracking-wide">
+        <h3 className="font-anton text-3xl text-slate-900 tracking-wide">
           {plan.name}
         </h3>
         {plan.badge && (
@@ -160,7 +160,7 @@ function PlanCard({ plan }: { plan: any }) {
       
       {/* Speed Display */}
       <div className="flex items-end gap-2 mb-6">
-        <span className="font-bebas text-8xl text-[var(--brand-primary)] leading-none tracking-normal">
+        <span className="font-anton text-8xl text-[var(--brand-primary)] leading-none tracking-normal">
           {plan.speed}
         </span>
         <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-black mb-1 uppercase tracking-wider">
@@ -177,12 +177,12 @@ function PlanCard({ plan }: { plan: any }) {
 
       {/* Price */}
       <div className="flex items-start gap-1 text-slate-900 mb-6">
-        <span className="font-bebas text-3xl mt-2">R$</span>
-        <span className="font-bebas text-7xl tracking-normal leading-none">
+        <span className="font-anton text-3xl mt-2">R$</span>
+        <span className="font-anton text-7xl tracking-normal leading-none">
           {plan.price}
         </span>
         <div className="flex flex-col items-start justify-start">
-          <span className="font-bebas text-3xl leading-none">,{plan.cents}</span>
+          <span className="font-anton text-3xl leading-none">,{plan.cents}</span>
           <span className="text-sm font-bold text-slate-500 mt-1 uppercase">/mês</span>
         </div>
       </div>
@@ -212,7 +212,7 @@ function PlanCard({ plan }: { plan: any }) {
         className={cn(
           buttonVariants({ size: "lg" }),
           "w-full h-14 rounded-full font-black text-lg transition-all",
-          "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg shadow-red-500/20 hover:-translate-y-0.5 font-bebas text-2xl tracking-wider pt-1"
+          "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg shadow-red-500/20 hover:-translate-y-0.5 font-anton text-2xl tracking-wider pt-1"
         )}
       >
         Contratar

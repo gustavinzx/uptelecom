@@ -109,7 +109,7 @@ export default function Blog() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="font-bebas text-5xl md:text-7xl mb-6 text-white tracking-wide">
+            <h2 className="font-anton text-5xl md:text-7xl mb-6 text-white tracking-wide">
               Nosso Blog
             </h2>
             <p className="text-xl md:text-2xl text-slate-400 font-medium max-w-3xl">
@@ -137,7 +137,7 @@ export default function Blog() {
                 <span className="text-sm font-bold text-[var(--brand-blue)] mb-4 tracking-wider uppercase">
                   {p.date}
                 </span>
-                <h3 className="font-bebas text-3xl md:text-4xl mb-4 text-white leading-snug group-hover:text-[var(--brand-blue)] transition-colors tracking-wide pt-1">
+                <h3 className="font-anton text-3xl md:text-4xl mb-4 text-white leading-snug group-hover:text-[var(--brand-blue)] transition-colors tracking-wide pt-1">
                   {p.title}
                 </h3>
                 <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed mb-6 flex-1">
@@ -178,7 +178,7 @@ export default function Blog() {
                     <span className="inline-block bg-[var(--brand-primary)] text-white px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase mb-6">
                       {selectedPost.date}
                     </span>
-                    <h3 className="font-bebas text-5xl md:text-7xl text-white leading-[0.9] max-w-4xl tracking-wide">
+                    <h3 className="font-anton text-5xl md:text-7xl text-white leading-[0.9] max-w-4xl tracking-wide">
                       {selectedPost.title}
                     </h3>
                   </div>
@@ -191,12 +191,12 @@ export default function Blog() {
                 </div>
                 
                 <div className="mt-20 pt-10 border-t border-white/10">
-                   <h4 className="font-bebas text-4xl mb-6 text-center text-white tracking-wide">Gostou deste artigo?</h4>
+                   <h4 className="font-anton text-4xl mb-6 text-center text-white tracking-wide">Gostou deste artigo?</h4>
                    <div className="flex justify-center gap-4">
-                      <button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 py-4 rounded-xl font-bebas text-2xl tracking-wide shadow-lg pt-5">
+                      <button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 py-4 rounded-xl font-anton text-2xl tracking-wide shadow-lg pt-5">
                         Conhecer Planos
                       </button>
-                      <button onClick={() => setSelectedPost(null)} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bebas text-2xl tracking-wide shadow-sm pt-5">
+                      <button onClick={() => setSelectedPost(null)} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-anton text-2xl tracking-wide shadow-sm pt-5">
                         Ler mais conteúdos
                       </button>
                    </div>

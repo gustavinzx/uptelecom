@@ -59,7 +59,7 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
         fontFamily: {
-            bebas: ['"Bebas Neue"', 'sans-serif'],
+            anton: ['"Anton"', 'sans-serif'],
         },
   		keyframes: {
   			'accordion-down': {

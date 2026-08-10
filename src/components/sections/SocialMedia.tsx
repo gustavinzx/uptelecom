@@ -13,7 +13,7 @@ export default function SocialMedia() {
           
           {/* Text & Links Side */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
-            <h2 className="font-bebas text-5xl md:text-6xl mb-6 text-white tracking-wide">
+            <h2 className="font-anton text-5xl md:text-6xl mb-6 text-white tracking-wide">
               Fique por dentro no <br /><span className="text-transparent bg-clip-text bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500">Instagram</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-400 font-medium mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">

@@ -19,7 +19,7 @@ export default function SelfService() {
       
       <Reveal className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-bebas text-5xl md:text-6xl mb-6 tracking-wide drop-shadow-sm">Sua Conta <span className="text-white/80">Na Palma da Mão</span></h2>
+          <h2 className="font-anton text-5xl md:text-6xl mb-6 tracking-wide drop-shadow-sm">Sua Conta <span className="text-white/80">Na Palma da Mão</span></h2>
           <p className="text-xl max-w-2xl mx-auto font-medium text-white/90">
             Acesse a Área do Assinante para emitir boletos, verificar conexão e abrir chamados de forma rápida.
           </p>
