@@ -84,16 +84,16 @@ const comboPlans = [
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 bg-[#f8fafc] relative overflow-hidden">
-      {/* Light subtle glow effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[var(--brand-primary)]/5 blur-[120px] rounded-full pointer-events-none" />
+    <section id="planos" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_plans.jpg')" }}>
+      {/* Dark Gradient Overlay for Fade effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-900 uppercase tracking-tight">
-            Escolha o seu novo <span className="text-[var(--brand-primary)]">Plano</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white uppercase tracking-tight">
+            Escolha o seu novo <span className="text-[var(--brand-blue)]">Plano</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium">
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-medium">
             Descubra os melhores planos para turbinar sua navegação, filmes, jogos e rotina digital com mais velocidade e estabilidade.
           </p>
         </div>
@@ -125,8 +125,8 @@ export default function Plans() {
           </TabsContent>
         </Tabs>
         
-        <p className="text-center text-slate-500 text-sm mt-12 font-medium">
-          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-slate-900 hover:text-[var(--brand-primary)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
+        <p className="text-center text-slate-400 text-sm mt-12 font-medium">
+          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-white hover:text-[var(--brand-blue)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
         </p>
       </div>
     </section>
@@ -149,7 +149,7 @@ function PlanCard({ plan }: { plan: any }) {
           {plan.name}
         </h3>
         {plan.badge && (
-          <span className="bg-[#22c55e]/10 text-[#16a34a] px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+          <span className="bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] px-3 py-1 rounded-full text-xs font-bold tracking-wide">
             {plan.badge}
           </span>
         )}
@@ -185,7 +185,7 @@ function PlanCard({ plan }: { plan: any }) {
       </div>
 
       {/* Free Installation Pill */}
-      <div className="bg-[#22c55e] text-white px-4 py-2 rounded-full text-sm font-black w-max mb-8 shadow-sm">
+      <div className="bg-[var(--brand-blue)] text-white px-4 py-2 rounded-full text-sm font-black w-max mb-8 shadow-sm">
         INSTALAÇÃO GRATUITA
       </div>
 
@@ -209,7 +209,7 @@ function PlanCard({ plan }: { plan: any }) {
         className={cn(
           buttonVariants({ size: "lg" }),
           "w-full h-14 rounded-full font-black text-lg transition-all",
-          "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/20 hover:-translate-y-0.5"
+          "bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-primary-hover)] shadow-lg shadow-red-500/20 hover:-translate-y-0.5"
         )}
       >
         Contratar

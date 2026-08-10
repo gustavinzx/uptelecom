@@ -7,17 +7,18 @@ export default function Coverage() {
   const [cep, setCep] = useState("");
 
   return (
-    <section id="cobertura" className="py-24 bg-[#0b1220] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#101a30] -skew-x-12 translate-x-20 z-0" />
+    <section id="cobertura" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_coverage.jpg')" }}>
+      {/* Dark Gradient Overlay for Fade effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-8">
               <MapPin size={32} />
             </div>
             <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tight">
-              Verifique a <span className="text-[var(--brand-primary)]">disponibilidade</span> na sua rua
+              Verifique a <span className="text-[var(--brand-blue)]">disponibilidade</span> na sua rua
             </h2>
             <p className="text-lg text-slate-400 mb-10 font-medium">
               Nossa rede 100% fibra óptica está em constante expansão na Colônia Agrícola 26 de Setembro. 
@@ -32,7 +33,7 @@ export default function Coverage() {
                 <input
                   type="text"
                   placeholder="Digite seu CEP"
-                  className="w-full h-14 pl-12 pr-4 rounded-full border border-slate-700 focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 outline-none transition-all bg-[#15233f] text-lg font-medium text-white placeholder-slate-500"
+                  className="w-full h-14 pl-12 pr-4 rounded-full border border-white/20 focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)]/20 outline-none transition-all bg-[#0b1220]/60 backdrop-blur-md text-lg font-medium text-white placeholder-slate-400"
                   value={cep}
                   onChange={(e) => setCep(e.target.value)}
                 />

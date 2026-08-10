@@ -27,8 +27,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 bg-[#0b1220]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
+      {/* Dark Gradient Overlay for Fade effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Asymmetric hero grid */}
         <div className="grid lg:grid-cols-3 gap-6 mb-16">
@@ -62,8 +64,8 @@ export default function Features() {
           {/* Stats column */}
           <div className="flex flex-col gap-6">
             {stats.map((s) => (
-              <div key={s.value} className="flex-1 bg-[#101a30] border border-slate-800 rounded-xl px-8 py-6 flex flex-col justify-center">
-                <p className="text-4xl font-black text-[var(--brand-primary)] leading-none mb-1">{s.value}</p>
+              <div key={s.value} className="flex-1 bg-[#0b1220]/60 backdrop-blur-md border border-white/10 rounded-xl px-8 py-6 flex flex-col justify-center">
+                <p className="text-4xl font-black text-[var(--brand-blue)] leading-none mb-1">{s.value}</p>
                 <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}
@@ -75,7 +77,7 @@ export default function Features() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="group p-8 rounded-xl bg-[#101a30] border border-slate-800 hover:border-slate-700 hover:bg-[#15233f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group p-8 rounded-xl bg-[#0b1220]/60 backdrop-blur-md border border-white/10 hover:border-white/20 hover:bg-[#0b1220]/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               <div className="w-12 h-12 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] flex items-center justify-center mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all duration-300">
                 <f.icon size={24} />

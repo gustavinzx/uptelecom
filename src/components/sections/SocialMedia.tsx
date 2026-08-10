@@ -2,16 +2,16 @@ import { Smartphone, Share2, MonitorPlay } from "lucide-react";
 
 export default function SocialMedia() {
   return (
-    <section className="py-24 bg-[var(--surface-bg)] border-t border-black/5">
+    <section className="py-24 bg-[#0b1220] border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Text & Links Side */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[var(--text-main)]">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
               Acompanhe a <span className="text-[var(--brand-primary)]">UP Telecom</span> nas redes
             </h2>
-            <p className="text-lg md:text-xl text-[var(--text-muted)] font-medium mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-slate-400 font-medium mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Fique por dentro das nossas novidades, promoções exclusivas e dicas para melhorar ainda mais a sua conexão em casa. Siga nossos perfis oficiais!
             </p>
             
@@ -29,7 +29,7 @@ export default function SocialMedia() {
                 href="#" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center justify-center w-14 h-14 bg-white text-blue-600 rounded-lg hover:bg-blue-50 border border-gray-200 hover:border-blue-200 hover:scale-105 transition-all shadow-sm"
+                className="flex items-center justify-center w-14 h-14 bg-[#15233f] text-blue-400 rounded-lg hover:bg-[#1e325c] border border-white/10 hover:border-blue-400/50 hover:scale-105 transition-all shadow-sm"
               >
                 <Share2 size={24} />
               </a>
@@ -37,7 +37,7 @@ export default function SocialMedia() {
                 href="#" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center justify-center w-14 h-14 bg-white text-red-600 rounded-lg hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:scale-105 transition-all shadow-sm"
+                className="flex items-center justify-center w-14 h-14 bg-[#15233f] text-red-400 rounded-lg hover:bg-[#1e325c] border border-white/10 hover:border-red-400/50 hover:scale-105 transition-all shadow-sm"
               >
                 <MonitorPlay size={24} />
               </a>

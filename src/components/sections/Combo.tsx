@@ -9,13 +9,16 @@ const streamings = [
 
 export default function Combo() {
   return (
-    <section className="py-24 bg-[var(--surface-bg)] border-y border-black/5">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_combo.jpg')" }}>
+      {/* Dark Gradient Overlay for Fade effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[var(--text-main)]">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
             Seus <span className="text-[var(--brand-primary)]">Streamings</span> Favoritos
           </h2>
-          <p className="text-lg text-[var(--text-muted)] font-medium max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 font-medium max-w-2xl mx-auto">
             Com a UP Telecom você pode turbinar sua internet com os melhores serviços de filmes e séries.
           </p>
         </div>

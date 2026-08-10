@@ -96,14 +96,14 @@ export default function Blog() {
   const [selectedPost, setSelectedPost] = useState<typeof posts[0] | null>(null);
 
   return (
-    <section id="blog" className="py-24 bg-[var(--surface-alt)] border-t border-black/5">
+    <section id="blog" className="py-24 bg-[#0b1220]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-[var(--text-main)]">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Nosso Blog
             </h2>
-            <p className="text-xl md:text-2xl text-[var(--text-muted)] font-medium max-w-3xl">
+            <p className="text-xl md:text-2xl text-slate-400 font-medium max-w-3xl">
               Fique por dentro das novidades e dicas sobre internet, tecnologia e segurança.
             </p>
           </div>
@@ -114,9 +114,9 @@ export default function Blog() {
             <article
               key={p.id}
               onClick={() => setSelectedPost(p)}
-              className="group cursor-pointer rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-black/5 flex flex-col"
+              className="group cursor-pointer rounded-2xl overflow-hidden bg-[#0b1220]/60 backdrop-blur-md shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-white/30 flex flex-col"
             >
-              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden rounded-t-2xl bg-gray-100">
+              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden rounded-t-2xl bg-[#15233f]">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -125,16 +125,16 @@ export default function Blog() {
                 />
               </div>
               <div className="p-8 md:p-10 flex-1 flex flex-col">
-                <span className="text-sm font-bold text-[var(--brand-primary)] mb-4 tracking-wider uppercase">
+                <span className="text-sm font-bold text-[var(--brand-blue)] mb-4 tracking-wider uppercase">
                   {p.date}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--text-main)] leading-snug group-hover:text-[var(--brand-primary)] transition-colors">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-snug group-hover:text-[var(--brand-blue)] transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-[var(--text-muted)] text-base md:text-lg font-medium leading-relaxed mb-6 flex-1">
+                <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed mb-6 flex-1">
                   {p.excerpt}
                 </p>
-                <div className="inline-flex items-center gap-2 font-bold text-[var(--text-main)] group-hover:text-[var(--brand-primary)] transition-colors mt-auto text-lg">
+                <div className="inline-flex items-center gap-2 font-bold text-white group-hover:text-[var(--brand-blue)] transition-colors mt-auto text-lg">
                   Ler post <ArrowRight size={20} />
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function Blog() {
 
       {/* FULLSCREEN MODAL */}
       <Dialog open={!!selectedPost} onOpenChange={(open) => !open && setSelectedPost(null)}>
-        <DialogContent className="max-w-[100vw] w-screen h-screen p-0 m-0 overflow-y-auto bg-white border-0 flex flex-col rounded-none rounded-t-[2rem] md:rounded-none">
+        <DialogContent className="max-w-[100vw] w-screen h-screen p-0 m-0 overflow-y-auto bg-[#0b1220] border-0 flex flex-col rounded-none rounded-t-[2rem] md:rounded-none">
           <DialogTitle className="sr-only">{selectedPost?.title}</DialogTitle>
           <DialogDescription className="sr-only">{selectedPost?.excerpt}</DialogDescription>
           
@@ -153,7 +153,7 @@ export default function Blog() {
             <div className="w-full max-w-5xl mx-auto flex-1 flex flex-col pt-8 pb-32 px-6">
               <button 
                 onClick={() => setSelectedPost(null)}
-                className="self-end mb-8 flex items-center gap-2 text-gray-500 hover:text-black font-bold text-lg bg-gray-100 px-6 py-3 rounded-full transition-colors"
+                className="self-end mb-8 flex items-center gap-2 text-slate-400 hover:text-white font-bold text-lg bg-white/10 px-6 py-3 rounded-full transition-colors"
               >
                 Voltar <X size={24} />
               </button>
@@ -177,17 +177,17 @@ export default function Blog() {
               </div>
               
               <div className="w-full max-w-4xl mx-auto">
-                <div className="text-[var(--text-main)] leading-relaxed font-medium">
+                <div className="text-slate-300 leading-relaxed font-medium">
                   {selectedPost.content}
                 </div>
                 
-                <div className="mt-20 pt-10 border-t border-gray-200">
-                   <h4 className="text-2xl font-bold mb-6 text-center">Gostou deste artigo?</h4>
+                <div className="mt-20 pt-10 border-t border-white/10">
+                   <h4 className="text-2xl font-bold mb-6 text-center text-white">Gostou deste artigo?</h4>
                    <div className="flex justify-center gap-4">
                       <button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg">
                         Conhecer Planos
                       </button>
-                      <button onClick={() => setSelectedPost(null)} className="bg-gray-100 hover:bg-gray-200 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-sm">
+                      <button onClick={() => setSelectedPost(null)} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-sm">
                         Ler mais conteúdos
                       </button>
                    </div>

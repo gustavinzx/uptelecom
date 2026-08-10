@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    /* Brand colors (upconexion.com.br / Nova Logo) */
-    --brand-primary: #a90a34; /* Logo Deep Red */
-    --brand-primary-hover: #8f072a;
-    --brand-accent: #d70d42; /* Vivid Red */
-    --brand-blue: #0b5fb4; /* Poster Tech Blue */
-    --brand-blue-hover: #08498c;
+    /* Brand colors (Blue & Red) */
+    --brand-primary: #E60000; /* Deep Red */
+    --brand-primary-hover: #cc0000;
+    --brand-accent: #ff1a1a; /* Vivid Red */
+    --brand-blue: #0055FF; /* Pure Tech Blue */
+    --brand-blue-hover: #0044cc;
     
     /* Layout colors */
     --surface-bg: #f8fafc; /* Soft Slate 50 for premium feel */
@@ -30,19 +30,19 @@
     --card-foreground: 0 0% 8.2%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 8.2%;
-    --primary: 341 94% 37%; /* #b9053d */
+    --primary: 0 100% 45%; /* #E60000 */
     --primary-foreground: 0 0% 98%;
     --secondary: 226 58% 97%; /* #f4f6fd */
     --secondary-foreground: 0 0% 8.2%;
     --muted: 226 58% 97%;
     --muted-foreground: 0 0% 46%;
-    --accent: 344 94% 47%; /* #ed0744 */
+    --accent: 0 100% 55%; /* #ff1a1a */
     --accent-foreground: 0 0% 98%;
-    --destructive: 341 94% 37%;
+    --destructive: 0 100% 45%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 91%;
     --input: 0 0% 91%;
-    --ring: 341 94% 37%;
+    --ring: 0 100% 45%;
     --radius: 9999px; /* Pill-shaped buttons */
   }
 }

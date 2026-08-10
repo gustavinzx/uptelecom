@@ -9,7 +9,7 @@ const services = [
 
 export default function SelfService() {
   return (
-    <section id="autoatendimento" className="py-24 bg-[var(--surface-dark)] text-white relative">
+    <section id="autoatendimento" className="py-24 bg-[#0b1220] text-white relative">
       {/* Decorative background element */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none" />
       

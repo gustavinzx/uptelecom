@@ -32,15 +32,9 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-        {/* Logo Lockup */}
-        <a href="#" className="flex items-center gap-3 shrink-0 group">
-          {/* Logo Icon (Using the existing logo image as icon, or fallback styling) */}
-          <div className="bg-[var(--brand-primary)] w-8 h-8 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-            <span className="text-white font-black text-sm">UP</span>
-          </div>
-          <span className="font-black text-xl text-white tracking-tight">
-            UP TELECOM
-          </span>
+        {/* Logo */}
+        <a href="#" className="flex items-center shrink-0 group">
+          <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-10 w-auto group-hover:scale-105 transition-transform" />
         </a>
 
         {/* Desktop Nav */}
@@ -52,7 +46,7 @@ export default function Navbar() {
               className={cn(
                 "transition-colors uppercase tracking-wider text-xs",
                 link.active
-                  ? "text-[#00D4FF]" // Signal (Cyan)
+                  ? "text-[var(--brand-blue)]" // Blue
                   : "text-slate-300 hover:text-white"
               )}
             >
@@ -67,7 +61,7 @@ export default function Navbar() {
             href="https://sistema.upconexion.com.br/central_assinante_web/login"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-[#a90a34] text-white px-6 py-2.5 text-sm font-bold hover:brightness-110 transition shadow-lg shadow-[#a90a34]/20"
+            className="rounded-full bg-[var(--brand-primary)] text-white px-6 py-2.5 text-sm font-bold hover:brightness-110 transition shadow-lg shadow-red-500/20"
           >
             Consultar viabilidade
           </a>
@@ -81,12 +75,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#0b1220] border-white/10">
               <SheetTitle className="text-left mb-10 mt-4 flex items-center gap-3">
-                <div className="bg-[var(--brand-primary)] w-8 h-8 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-black text-sm">UP</span>
-                </div>
-                <span className="font-black text-xl text-white tracking-tight">
-                  UP TELECOM
-                </span>
+                <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-10 w-auto" />
               </SheetTitle>
               <nav className="flex flex-col gap-6 mt-4">
                 {navLinks.map((link) => (
@@ -95,7 +84,7 @@ export default function Navbar() {
                       href={link.href}
                       className={cn(
                         "text-lg font-bold uppercase tracking-wider transition-colors",
-                        link.active ? "text-[#00D4FF]" : "text-slate-300 hover:text-white"
+                        link.active ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
                       )}
                     >
                       {link.name}
@@ -106,7 +95,7 @@ export default function Navbar() {
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-lg font-bold text-white bg-[#a90a34] px-4 py-3 rounded-full text-center mt-4 transition-all"
+                  className="text-lg font-bold text-white bg-[var(--brand-primary)] px-4 py-3 rounded-full text-center mt-4 transition-all"
                 >
                   Consultar viabilidade
                 </a>
