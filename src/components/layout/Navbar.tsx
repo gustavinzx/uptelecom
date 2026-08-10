@@ -57,7 +57,7 @@ export default function Navbar() {
       <div className={cn(
         "flex items-center justify-between px-8 py-3 rounded-full transition-all duration-500 border",
         scrolled
-          ? "bg-[#0b1220]/80 backdrop-blur-xl shadow-2xl border-white/10"
+          ? "bg-[#0b1220] shadow-2xl border-white/10"
           : "bg-transparent backdrop-blur-sm border-transparent"
       )}>
         {/* Logo */}

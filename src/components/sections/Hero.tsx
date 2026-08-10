@@ -56,7 +56,7 @@ export default function Hero() {
         <CarouselContent className="h-full">
           {slides.map((slide) => (
             <CarouselItem key={slide.id} className="h-full">
-              <div className="relative w-full h-[90vh] md:h-[850px] flex items-center">
+              <div className="relative w-full h-[90vh] md:h-[850px] flex items-center justify-center">
                 
                 {/* Background Image */}
                 <div 
@@ -68,8 +68,8 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/70 to-transparent z-10" />
 
                 {/* Content Container */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col justify-center pt-40 md:pt-48">
-                  <div className="w-full md:w-3/5 lg:w-[48%]">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col justify-center">
+                  <div className="w-full md:w-3/5 lg:w-[50%]">
                     
                     <span className="inline-block py-1.5 px-4 rounded-full bg-[var(--brand-blue)]/20 border border-[var(--brand-blue)]/30 text-[var(--brand-blue)] text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(0,85,255,0.2)]">
                       ● Ultravelocidade para a família
