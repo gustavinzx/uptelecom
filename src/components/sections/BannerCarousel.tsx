@@ -16,7 +16,7 @@ const banners = [
   },
   {
     id: 2,
-    image: "/imgs/hero-slide-2.jpg",
+    image: "/imgs/Banner2.jpg",
     title: <></>,
     subtitle: <></>,
     buttonText: "",
