@@ -1,4 +1,4 @@
-import { Smartphone, Share2, MonitorPlay } from "lucide-react";
+import { Smartphone } from "lucide-react";
 
 export default function SocialMedia() {
   return (
@@ -14,37 +14,44 @@ export default function SocialMedia() {
           {/* Text & Links Side */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
             <h2 className="font-bebas text-5xl md:text-6xl mb-6 text-white tracking-wide">
-            Siga-nos nas <span className="text-[var(--brand-primary)]">Redes Sociais</span>
-          </h2>
+              Fique por dentro no <br /><span className="text-transparent bg-clip-text bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500">Instagram</span>
+            </h2>
             <p className="text-lg md:text-xl text-slate-400 font-medium mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Fique por dentro das nossas novidades, promoções exclusivas e dicas para melhorar ainda mais a sua conexão em casa. Siga nossos perfis oficiais!
+              Acompanhe os bastidores, promoções exclusivas, dicas para melhorar seu Wi-Fi e todas as novidades da melhor conexão da cidade.
             </p>
             
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            {/* Premium Profile Card */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-6 mb-8 bg-[#15233f]/40 p-6 rounded-2xl border border-white/10 backdrop-blur-md max-w-md mx-auto lg:mx-0 shadow-xl">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-full blur opacity-75"></div>
+                <img src="/imgs/insta.jpg" alt="Instagram UP Telecom" className="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-[#0b1220] object-cover" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">UP Telecom</h3>
+                <p className="text-pink-400 font-medium mb-3">@uptelecom_conect</p>
+                <div className="flex items-center justify-center sm:justify-start gap-4 text-sm text-slate-300 font-bold">
+                  <div className="flex flex-col items-center">
+                    <span className="text-white text-lg">5K+</span>
+                    <span className="text-xs font-normal">Seguidores</span>
+                  </div>
+                  <div className="w-px h-8 bg-white/20"></div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-white text-lg">100%</span>
+                    <span className="text-xs font-normal">Fibra Óptica</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-start">
               <a 
                 href="https://instagram.com/uptelecom_conect" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
               >
                 <Smartphone size={24} />
-                @uptelecom_conect
-              </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noreferrer"
-                className="flex items-center justify-center w-14 h-14 bg-[#15233f] text-blue-400 rounded-lg hover:bg-[#1e325c] border border-white/10 hover:border-blue-400/50 hover:scale-105 transition-all shadow-sm"
-              >
-                <Share2 size={24} />
-              </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noreferrer"
-                className="flex items-center justify-center w-14 h-14 bg-[#15233f] text-red-400 rounded-lg hover:bg-[#1e325c] border border-white/10 hover:border-red-400/50 hover:scale-105 transition-all shadow-sm"
-              >
-                <MonitorPlay size={24} />
+                Seguir @uptelecom_conect
               </a>
             </div>
           </div>
