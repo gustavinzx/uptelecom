@@ -42,14 +42,14 @@ export default function BannerCarousel() {
         <CarouselContent>
           {banners.map((banner) => (
             <CarouselItem key={banner.id}>
-              <div className={cn("relative w-full h-[60vh] md:h-[75vh] overflow-hidden flex flex-col md:flex-row items-center", banner.style.includes("image-only") ? "justify-center" : "bg-[#0a1128]")}>
+              <div className={cn("relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden flex flex-col md:flex-row items-center", banner.style.includes("image-only") ? "justify-center" : "bg-[#0a1128]")}>
                 
                 {banner.style === "image-only" && (
                   <div className="w-full h-full relative flex items-center justify-center bg-gradient-to-r from-[#03158c] to-[#010940]">
                     <img 
                       src={banner.image} 
                       alt="Promoção UP Telecom" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain md:object-cover"
                     />
                   </div>
                 )}
