@@ -8,8 +8,8 @@ const navLinks = [
   { name: "Planos", href: "#planos" },
   { name: "Avaliações", href: "#avaliacoes" },
   { name: "Blog", href: "#blog" },
-  { name: "Redes Sociais", href: "#redes-sociais" },
   { name: "Contato", href: "#rodape" },
+  { name: "Redes Sociais", href: "#redes-sociais" },
 ];
 
 export default function Navbar() {
