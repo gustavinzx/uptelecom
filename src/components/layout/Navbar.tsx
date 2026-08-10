@@ -52,7 +52,7 @@ export default function Navbar() {
               className={cn(
                 "transition-colors uppercase tracking-wider text-xs",
                 link.active
-                  ? "text-[#22c55e]" // Signal (Green)
+                  ? "text-[#00D4FF]" // Signal (Cyan)
                   : "text-slate-300 hover:text-white"
               )}
             >
@@ -95,7 +95,7 @@ export default function Navbar() {
                       href={link.href}
                       className={cn(
                         "text-lg font-bold uppercase tracking-wider transition-colors",
-                        link.active ? "text-[#22c55e]" : "text-slate-300 hover:text-white"
+                        link.active ? "text-[#00D4FF]" : "text-slate-300 hover:text-white"
                       )}
                     >
                       {link.name}

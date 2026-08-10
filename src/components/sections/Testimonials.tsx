@@ -48,7 +48,7 @@ export default function Testimonials() {
         {/* Left Side (Title + Callout Card) */}
         <div className="w-full lg:w-1/3 flex flex-col gap-6">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
-            Quem escolhe UP Telecom <span className="text-[#22c55e]">recomenda</span>
+            Quem escolhe UP Telecom <span className="text-[#00D4FF]">recomenda</span>
           </h2>
           <p className="text-slate-500 font-medium">
             Avaliações reais de clientes que confiam na nossa internet para navegar com estabilidade, velocidade e atendimento próximo.
@@ -73,7 +73,7 @@ export default function Testimonials() {
                 <p className="text-xs text-slate-500 font-medium">Avaliações verificadas de clientes reais.</p>
               </div>
             </div>
-            <div className="bg-[#22c55e]/10 text-[#16a34a] px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap">
+            <div className="bg-[#00D4FF]/10 text-[#00b8e6] px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap">
               4.9/5 estrelas
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
                   <img src={r.avatar} alt={r.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-sm flex items-center gap-1 text-slate-900 truncate">
-                      {r.name} <BadgeCheck size={14} className="text-[#25D366]" />
+                      {r.name} <BadgeCheck size={14} className="text-[#00D4FF]" />
                     </p>
                     <p className="text-xs text-slate-500">{r.date}</p>
                   </div>

@@ -11,7 +11,7 @@ const slides = [
     title: (
       <>
         Internet rápida de verdade,<br />
-        <span className="text-[#22c55e]">direto na sua casa.</span>
+        <span className="text-[#00D4FF]">direto na sua casa.</span>
       </>
     ),
     subtitle: "100% fibra óptica própria, sem revenda e sem depender de terceiros.",
@@ -35,7 +35,7 @@ const slides = [
     title: (
       <>
         Suporte de gente,<br />
-        <span className="text-[#22c55e]">não de robô.</span>
+        <span className="text-[#00D4FF]">não de robô.</span>
       </>
     ),
     subtitle: "Equipe local, atendimento próximo, sem script de call center.",
@@ -59,7 +59,7 @@ const slides = [
     title: (
       <>
         Conectando você<br />
-        <span className="text-[#22c55e]">ao que importa.</span>
+        <span className="text-[#00D4FF]">ao que importa.</span>
       </>
     ),
     subtitle: "Planos de alta velocidade com conexão estável para sua casa, trabalho e lazer.",
@@ -74,7 +74,7 @@ export default function BannerCarousel() {
   );
 
   return (
-    <section className="w-full relative overflow-hidden bg-[#0b1220] min-h-[90vh] md:min-h-[600px] flex items-center">
+    <section className="w-full relative overflow-hidden bg-[#0b1220] min-h-[100vh] md:min-h-[700px] flex items-center">
       
       {/* Light Beams Animation Layer */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
@@ -103,7 +103,7 @@ export default function BannerCarousel() {
         <CarouselContent className="h-full">
           {slides.map((slide) => (
             <CarouselItem key={slide.id} className="h-full">
-              <div className="relative w-full h-[90vh] md:h-[100vh] min-h-[600px] flex items-center">
+              <div className="relative w-full h-[100vh] md:h-[100vh] min-h-[700px] flex items-center">
                 
                 {/* Background Image */}
                 <div 
@@ -115,7 +115,7 @@ export default function BannerCarousel() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/80 to-[#0b1220]/40" />
 
                 {/* Content Container */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col pt-32 md:pt-0">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col pt-32 pb-32 md:pt-0 md:pb-0">
                   <div className="w-full md:w-3/5 lg:w-1/2">
                     <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-bold tracking-wider uppercase mb-6 backdrop-blur-md">
                       {slide.badge}
@@ -131,7 +131,7 @@ export default function BannerCarousel() {
                         href="#planos"
                         className={cn(
                           buttonVariants({ size: "lg" }),
-                          "h-14 rounded-full bg-[#22c55e] hover:bg-[#1fa14f] text-white px-8 font-bold text-base shadow-lg shadow-[#22c55e]/20 tracking-wide"
+                          "h-14 rounded-full bg-[#00D4FF] hover:bg-[#00b8e6] text-white px-8 font-bold text-base shadow-lg shadow-[#00D4FF]/20 tracking-wide"
                         )}
                       >
                         Ver Planos
@@ -159,9 +159,9 @@ export default function BannerCarousel() {
       </Carousel>
 
       {/* Floating Price Card (Global over the Carousel) */}
-      <div className="hidden lg:block absolute bottom-12 right-12 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-8 max-w-[340px] z-30 border-t-[6px] border-[#22c55e]">
+      <div className="hidden lg:block absolute bottom-12 right-12 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-8 max-w-[340px] z-30 border-t-[6px] border-[#00D4FF]">
         <p className="text-sm text-slate-500 uppercase tracking-wider mb-2 font-bold flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#00D4FF] animate-pulse" />
           Planos a partir de
         </p>
         <div className="flex items-start gap-1 mb-4">
@@ -171,7 +171,7 @@ export default function BannerCarousel() {
         </div>
         <div className="bg-slate-100 rounded-lg py-2 px-3 mb-6">
           <p className="text-sm text-slate-700 font-bold flex items-center gap-2">
-            <span className="text-[#22c55e]">✔</span> Wi-Fi grátis + Instalação
+            <span className="text-[#00D4FF]">✔</span> Wi-Fi grátis + Instalação
           </p>
         </div>
         <a 
