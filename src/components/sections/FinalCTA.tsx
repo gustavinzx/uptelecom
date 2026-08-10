@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-[#0b1220] relative overflow-hidden">
+    <section id="rodape" className="py-24 bg-[#0b1220] relative overflow-hidden">
       {/* Background Blobs for Visual Interest */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[var(--brand-primary)]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--brand-blue)]/10 rounded-full blur-[100px] pointer-events-none" />
