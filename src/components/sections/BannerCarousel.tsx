@@ -16,22 +16,12 @@ const banners = [
   },
   {
     id: 2,
-    image: "/imgs/IMG-20250723-WA0081.jpg",
-    title: (
-      <>
-        Conectando você <br />
-        <span className="text-[var(--brand-primary)]">de verdade</span>
-      </>
-    ),
-    subtitle: (
-      <>
-        Fibra Óptica 100% própria, sem fidelidade e com os melhores serviços.<br />
-        <span className="inline-block mt-2">Acesso a Disney+, HBO Max, Globoplay e muito mais!</span>
-      </>
-    ),
-    buttonText: "Fale com um consultor",
-    buttonLink: "https://wa.me/5561981765721",
-    style: "split" // Custom style for the poster
+    image: "/imgs/promo_watch_new.jpg",
+    title: <></>,
+    subtitle: <></>,
+    buttonText: "",
+    buttonLink: "",
+    style: "image-only-light"
   }
 ];
 
@@ -52,10 +42,20 @@ export default function BannerCarousel() {
         <CarouselContent>
           {banners.map((banner) => (
             <CarouselItem key={banner.id}>
-              <div className={cn("relative w-full h-[60vh] md:h-[75vh] overflow-hidden bg-[#0a1128] flex flex-col md:flex-row items-center", banner.style === "image-only" ? "justify-center" : "")}>
+              <div className={cn("relative w-full h-[60vh] md:h-[75vh] overflow-hidden flex flex-col md:flex-row items-center", banner.style.includes("image-only") ? "justify-center" : "bg-[#0a1128]")}>
                 
                 {banner.style === "image-only" && (
                   <div className="w-full h-full relative flex items-center justify-center bg-gradient-to-r from-[#03158c] to-[#010940]">
+                    <img 
+                      src={banner.image} 
+                      alt="Promoção UP Telecom" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
+
+                {banner.style === "image-only-light" && (
+                  <div className="w-full h-full relative flex items-center justify-center bg-[#f3f4f6]">
                     <img 
                       src={banner.image} 
                       alt="Promoção UP Telecom" 
