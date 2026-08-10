@@ -9,10 +9,12 @@ const services = [
 
 export default function SelfService() {
   return (
-    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_plans_hq.jpg')" }}>
-      {/* Blue Overlay to keep the brand color */}
-      <div className="absolute inset-0 bg-[var(--brand-blue)]/90 mix-blend-multiply pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_app.jpg')" }}>
+      {/* Dark Overlay with smooth top/bottom gradients */}
+      <div className="absolute inset-0 bg-[#0b1220]/75 backdrop-blur-[2px] pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220]/60 to-transparent pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
