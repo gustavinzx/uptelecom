@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const banners = [
   {
     id: 1,
-    image: "/imgs/hero-slide-1.jpg",
+    image: "/imgs/foto-promocao.jpg",
     title: <></>,
     subtitle: <></>,
     buttonText: "",
@@ -16,7 +16,7 @@ const banners = [
   },
   {
     id: 2,
-    image: "/imgs/Banner2.jpg",
+    image: "/imgs/foto-astronauta.jpg",
     title: <></>,
     subtitle: <></>,
     buttonText: "",
