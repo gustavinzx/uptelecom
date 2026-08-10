@@ -6,8 +6,9 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Início", href: "#hero" },
   { name: "Planos", href: "#planos" },
-  { name: "Empresa", href: "#vantagens" },
   { name: "Avaliações", href: "#avaliacoes" },
+  { name: "Blog", href: "#blog" },
+  { name: "Redes Sociais", href: "#redes-sociais" },
   { name: "Contato", href: "#rodape" },
 ];
 
@@ -46,17 +47,23 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300 rounded-b-2xl border-b border-white/5",
-        scrolled
-          ? "bg-[#0b1220]/90 backdrop-blur-md shadow-xl py-3"
-          : "bg-[#0b1220]/80 backdrop-blur-sm py-5"
+        "fixed top-4 inset-x-0 z-50 transition-all duration-500 mx-auto max-w-7xl px-4",
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
+      <div className={cn(
+        "flex items-center justify-between px-8 py-3 rounded-full transition-all duration-500 border",
+        scrolled
+          ? "bg-[#0b1220]/80 backdrop-blur-xl shadow-2xl border-white/10"
+          : "bg-transparent backdrop-blur-sm border-transparent"
+      )}>
         {/* Logo */}
-        <a href="#hero" className="flex items-center shrink-0 group relative">
+        <a href="#hero" className="flex items-center shrink-0 group relative overflow-visible h-10 w-28">
           <div className="absolute inset-0 bg-[var(--brand-blue)] blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
-          <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-20 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300" />
+          <img 
+            src="/imgs/imagemtelecom.png" 
+            alt="UP Telecom" 
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-[180px] max-w-none origin-left scale-125 group-hover:scale-150 transition-transform duration-500 z-10" 
+          />
         </a>
 
         {/* Desktop Nav */}
