@@ -50,7 +50,7 @@ export default function Testimonials() {
         
         {/* Left Side (Title + Callout Card) */}
         <div className="w-full lg:w-1/3 flex flex-col gap-6">
-          <h2 className="font-anton text-5xl md:text-6xl text-white leading-[1] tracking-wide">
+          <h2 className="font-anton text-4xl md:text-5xl text-white leading-[1] tracking-wide">
             Quem escolhe UP Telecom <span className="text-[var(--brand-blue)] drop-shadow-md">recomenda</span>
           </h2>
           <p className="text-slate-500 font-medium">

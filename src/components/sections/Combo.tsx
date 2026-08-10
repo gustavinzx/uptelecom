@@ -26,7 +26,7 @@ export default function Combo() {
             <span className="inline-block py-1 px-3 rounded-full bg-[var(--brand-primary)]/20 border border-[var(--brand-primary)]/30 text-[var(--brand-primary)] text-xs font-bold tracking-widest uppercase mb-4">
               Diversão Completa
             </span>
-            <h2 className="font-anton text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide">
+            <h2 className="font-anton text-4xl md:text-5xl lg:text-6xl mb-6 text-white tracking-wide">
               Seus <span className="text-[var(--brand-primary)]">Streamings</span> Favoritos
             </h2>
             <p className="text-lg text-slate-300 font-medium">

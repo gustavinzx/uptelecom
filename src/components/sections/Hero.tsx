@@ -76,7 +76,7 @@ export default function Hero() {
                       <span>Ultravelocidade para a família</span>
                     </div>
                     
-                    <h1 className="font-anton text-5xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-normal mb-8 drop-shadow-xl">
+                    <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-white leading-[0.9] tracking-normal mb-8 drop-shadow-xl">
                       {slide.title}
                     </h1>
                     
@@ -124,9 +124,9 @@ export default function Hero() {
           </p>
           
           <div className="flex items-start gap-2 mb-6">
-            <span className="font-anton text-3xl text-white mt-1">R$</span>
-            <span className="font-anton text-8xl text-white leading-none tracking-normal drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">79</span>
-            <span className="font-anton text-3xl text-[var(--brand-blue)] self-end mb-2">,90<br/><span className="text-sm tracking-widest text-slate-400 uppercase">/mês</span></span>
+            <span className="font-anton text-2xl text-white mt-1">R$</span>
+            <span className="font-anton text-6xl text-white leading-none tracking-normal drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">79</span>
+            <span className="font-anton text-2xl text-[var(--brand-blue)] self-end mb-2">,90<br/><span className="text-sm tracking-widest text-slate-400 uppercase">/mês</span></span>
           </div>
           
           <div className="bg-white/5 border border-white/10 rounded-xl py-3 px-4 mb-8">

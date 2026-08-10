@@ -43,7 +43,7 @@ export default function Features() {
                 Tecnologia de Ponta
               </div>
               
-              <h2 className="font-anton text-7xl md:text-8xl leading-[0.9] mb-6 text-white tracking-normal drop-shadow-lg">
+              <h2 className="font-anton text-5xl md:text-6xl leading-[1.1] mb-6 text-white tracking-normal drop-shadow-lg">
                 100%<br />FIBRA<br />PRÓPRIA
               </h2>
               
@@ -65,7 +65,7 @@ export default function Features() {
           {/* Uptime Card */}
           <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden shadow-xl hover:border-[var(--brand-blue)]/50 hover:shadow-[0_0_30px_rgba(0,85,255,0.2)] hover:-translate-y-2 transition-all duration-300 group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-blue)]/20 blur-2xl group-hover:bg-[var(--brand-blue)]/30 transition-all" />
-            <p className="font-anton text-6xl text-[var(--brand-blue)] leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
+            <p className="font-anton text-5xl text-[var(--brand-blue)] leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
               99.9%
             </p>
             <p className="text-sm font-bold text-slate-300 uppercase tracking-widest">
@@ -76,7 +76,7 @@ export default function Features() {
           {/* Support Card */}
           <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden shadow-xl hover:border-[var(--brand-primary)]/50 hover:shadow-[0_0_30px_rgba(230,0,0,0.2)] hover:-translate-y-2 transition-all duration-300 group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-primary)]/20 blur-2xl group-hover:bg-[var(--brand-primary)]/30 transition-all" />
-            <p className="font-anton text-6xl text-[var(--brand-primary)] leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
+            <p className="font-anton text-5xl text-[var(--brand-primary)] leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
               24/7
             </p>
             <p className="text-sm font-bold text-slate-300 uppercase tracking-widest">
@@ -87,7 +87,7 @@ export default function Features() {
           {/* Zero Data Card */}
           <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden shadow-xl hover:border-white/30 hover:-translate-y-2 transition-all duration-300 group">
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 blur-2xl transition-all" />
-            <p className="font-anton text-6xl text-white leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
+            <p className="font-anton text-5xl text-white leading-none tracking-normal mb-2 drop-shadow-md group-hover:scale-105 transition-transform origin-left">
               ZERO
             </p>
             <p className="text-sm font-bold text-slate-300 uppercase tracking-widest">

@@ -18,7 +18,7 @@ export default function Coverage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-8">
               <MapPin size={32} />
             </div>
-            <h2 className="font-anton text-5xl md:text-6xl mb-6 text-white tracking-wide">
+            <h2 className="font-anton text-4xl md:text-5xl mb-6 text-white tracking-wide">
               Cobertura na sua <span className="text-[var(--brand-blue)]">região</span>
             </h2>
             <p className="text-lg text-slate-400 mb-10 font-medium">
