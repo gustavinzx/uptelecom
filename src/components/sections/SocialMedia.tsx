@@ -23,8 +23,8 @@ export default function SocialMedia() {
             {/* Premium Profile Card */}
             <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-6 mb-8 bg-[#15233f]/40 p-6 rounded-2xl border border-white/10 backdrop-blur-md max-w-md mx-auto lg:mx-0 shadow-xl">
               <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-full blur opacity-75"></div>
-                <img src="/imgs/insta.jpg" alt="Instagram UP Telecom" className="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-[#0b1220] object-cover" />
+                <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-[2rem] blur opacity-75"></div>
+                <img src="/imgs/insta_logo.png" alt="Instagram UP Telecom" className="relative w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] object-cover" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">UP Telecom</h3>
