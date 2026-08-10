@@ -17,8 +17,8 @@ export function FiberBackground() {
         isHorizontal,
         isReverse,
         // Positioning
-        top: isHorizontal ? `${Math.random() * 100}%` : (isReverse ? "100%" : "-200px"),
-        left: isHorizontal ? (isReverse ? "100%" : "-200px") : `${Math.random() * 100}%`,
+        top: isHorizontal ? `${Math.random() * 100}%` : '0',
+        left: isHorizontal ? '0' : `${Math.random() * 100}%`,
         // Length and thickness of the light pulse
         width: isHorizontal ? "200px" : "2px",
         height: isHorizontal ? "2px" : "200px",
@@ -42,7 +42,7 @@ export function FiberBackground() {
       {fibers.map((fiber) => (
         <div
           key={fiber.id}
-          className={`absolute rounded-full opacity-0 ${fiber.animClass}`}
+          className={`absolute rounded-full ${fiber.animClass}`}
           style={{
             top: fiber.top,
             left: fiber.left,
