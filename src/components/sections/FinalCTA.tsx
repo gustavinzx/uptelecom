@@ -5,17 +5,21 @@ import { Button } from "@/components/ui/button";
 export default function FinalCTA() {
   return (
     <section className="py-24 bg-[#0b1220] relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
-            <h2 className="font-bebas text-5xl md:text-7xl mb-8 text-white tracking-wide">
-              Pronto para ter a <span className="text-[var(--brand-primary)]">melhor conexão</span>?
-            </h2>
+      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+        
+        <div className="relative mb-8">
+           <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full" />
+           <img src="/imgs/astro_3.png" alt="Mascote UP Telecom Assinando" className="relative z-10 w-full max-w-[200px] animate-float drop-shadow-2xl mx-auto" />
+        </div>
+
+        <h2 className="font-bebas text-6xl md:text-7xl mb-6 text-white tracking-wide">
+          Pronto para ser <span className="text-[var(--brand-blue)] drop-shadow-md">Ultra?</span>
+        </h2>
           <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">
             Fale com um consultor agora ou deixe seu número que nós ligamos para você em instantes.
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12 w-full">
           
           {/* WhatsApp CTA */}
           <div className="bg-[#101a30] p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center">

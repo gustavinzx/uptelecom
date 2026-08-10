@@ -62,14 +62,21 @@ export default function Features() {
           </div>
 
           {/* Stats column */}
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16 mt-24">
+          <div className="flex flex-col gap-6 w-full lg:w-1/3">
             {stats.map((s) => (
-              <div key={s.value} className="flex-1 bg-[#0b1220]/60 backdrop-blur-md border border-white/10 rounded-xl px-8 py-6 flex flex-col justify-center">
-                <p className="font-bebas text-5xl md:text-6xl text-[var(--brand-blue)] leading-none mb-1 tracking-wide">{s.value}</p>
+              <div key={s.value} className="flex-1 bg-[#0b1220]/60 backdrop-blur-md border border-white/10 rounded-xl px-8 py-6 flex flex-col justify-center shadow-lg hover:-translate-y-1 transition-transform">
+                <p className="font-bebas text-5xl md:text-6xl text-[var(--brand-blue)] leading-none mb-1 tracking-wide drop-shadow-md">{s.value}</p>
                 <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}
           </div>
+          
+          <div className="w-full lg:w-2/3 flex justify-center relative">
+            <div className="absolute inset-0 bg-[var(--brand-blue)]/10 blur-3xl rounded-full" />
+            <img src="/imgs/astro_2.png" alt="Mascotes UP Telecom Tech" className="relative z-10 w-full max-w-[500px] animate-float drop-shadow-2xl" />
+          </div>
+        </div>
         </div>
 
         {/* Supporting feature cards */}

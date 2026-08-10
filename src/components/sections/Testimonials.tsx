@@ -55,6 +55,10 @@ export default function Testimonials() {
           <p className="text-slate-500 font-medium">
             Avaliações reais de clientes que confiam na nossa internet para navegar com estabilidade, velocidade e atendimento próximo.
           </p>
+          <div className="relative mt-8 hidden lg:block">
+            <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full" />
+            <img src="/imgs/astro_4.png" alt="Mascotes UP Telecom Aprovam" className="relative z-10 w-full max-w-[320px] animate-float drop-shadow-2xl" />
+          </div>
 
           <div className="bg-[var(--brand-blue)]/10 border border-[var(--brand-blue)]/20 rounded-2xl p-6 shadow-xl text-white mt-4 relative overflow-hidden backdrop-blur-md">
             <p className="text-sm text-slate-400 font-bold mb-1 relative z-10 uppercase tracking-wider">Prova social real</p>

@@ -14,13 +14,24 @@ export default function Combo() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide">
-            Seus <span className="text-[var(--brand-primary)]">Streamings</span> Favoritos
-          </h2>
-          <p className="text-lg text-slate-300 font-medium max-w-2xl mx-auto">
-            Com a UP Telecom você pode turbinar sua internet com os melhores serviços de filmes e séries.
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-12">
+          
+          <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 relative">
+             <div className="absolute inset-0 bg-[var(--brand-primary)]/20 blur-3xl rounded-full" />
+             <img src="/imgs/astro_1.png" alt="Mascotes UP Telecom com Pipoca" className="relative z-10 w-full max-w-[400px] animate-float drop-shadow-2xl" />
+          </div>
+
+          <div className="w-full lg:w-1/2 text-left order-1 lg:order-2">
+            <span className="inline-block py-1 px-3 rounded-full bg-[var(--brand-primary)]/20 border border-[var(--brand-primary)]/30 text-[var(--brand-primary)] text-xs font-bold tracking-widest uppercase mb-4">
+              Diversão Completa
+            </span>
+            <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide">
+              Seus <span className="text-[var(--brand-primary)]">Streamings</span> Favoritos
+            </h2>
+            <p className="text-lg text-slate-300 font-medium">
+              Conexão sem gargalos para você assistir séries, filmes e vídeos com a máxima qualidade, sem aquela tela chata de carregamento.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
