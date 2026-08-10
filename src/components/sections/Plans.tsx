@@ -140,10 +140,10 @@ function PlanCard({ plan }: { plan: any }) {
   return (
     <div
       className={cn(
-        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 border bg-white",
+        "relative rounded-3xl p-8 flex flex-col transition-all duration-300 border bg-white hover:-translate-y-2 hover:shadow-xl",
         plan.popular 
-          ? "border-[var(--brand-primary)]/30 shadow-[0_20px_50px_rgba(169,10,52,0.1)] -translate-y-2" 
-          : "border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1"
+          ? "border-[var(--brand-primary)]/30 shadow-[0_20px_50px_rgba(169,10,52,0.1)] -translate-y-2 hover:-translate-y-4 hover:shadow-[0_25px_60px_rgba(169,10,52,0.15)]" 
+          : "border-slate-200 shadow-sm"
       )}
     >
       {/* Top Badge */}
