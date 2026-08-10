@@ -1,4 +1,3 @@
-import { Smartphone } from "lucide-react";
 
 export default function SocialMedia() {
   return (
@@ -22,22 +21,29 @@ export default function SocialMedia() {
             
             {/* Premium Profile Card */}
             <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-6 mb-8 bg-[#15233f]/40 p-6 rounded-2xl border border-white/10 backdrop-blur-md max-w-md mx-auto lg:mx-0 shadow-xl">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-[2rem] blur opacity-75"></div>
-                <img src="/imgs/insta_logo.png" alt="Instagram UP Telecom" className="relative w-20 h-20 md:w-24 md:h-24 rounded-[1.5rem] object-cover" />
+              <div className="relative shrink-0">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-full blur opacity-75"></div>
+                <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center border-2 border-[#0b1220] overflow-hidden">
+                  <img src="/imgs/IconSite.png" alt="UP Telecom" className="w-[60%] h-auto object-contain" />
+                </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-1">UP Telecom</h3>
-                <p className="text-pink-400 font-medium mb-3">@uptelecom_conect</p>
+                <h3 className="text-xl font-bold text-white mb-1">uptelecom_conect</h3>
+                <p className="text-slate-400 text-sm mb-3">up_telecom</p>
                 <div className="flex items-center justify-center sm:justify-start gap-4 text-sm text-slate-300 font-bold">
                   <div className="flex flex-col items-center">
-                    <span className="text-white text-lg">5K+</span>
-                    <span className="text-xs font-normal">Seguidores</span>
+                    <span className="text-white text-lg">131</span>
+                    <span className="text-xs font-normal">posts</span>
                   </div>
                   <div className="w-px h-8 bg-white/20"></div>
                   <div className="flex flex-col items-center">
-                    <span className="text-white text-lg">100%</span>
-                    <span className="text-xs font-normal">Fibra Óptica</span>
+                    <span className="text-white text-lg">496</span>
+                    <span className="text-xs font-normal">seguidores</span>
+                  </div>
+                  <div className="w-px h-8 bg-white/20"></div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-white text-lg">117</span>
+                    <span className="text-xs font-normal">seguindo</span>
                   </div>
                 </div>
               </div>
@@ -50,7 +56,7 @@ export default function SocialMedia() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
               >
-                <Smartphone size={24} />
+                <img src="/imgs/insta_logo.png" alt="Instagram" className="w-6 h-6 rounded-md" />
                 Seguir @uptelecom_conect
               </a>
             </div>
