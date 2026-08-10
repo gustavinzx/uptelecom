@@ -49,7 +49,7 @@ export default function BannerCarousel() {
                     <img 
                       src={banner.image} 
                       alt="Promoção UP Telecom" 
-                      className="w-full h-full object-contain md:object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 )}
