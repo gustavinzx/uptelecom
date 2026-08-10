@@ -12,18 +12,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           {/* Logo & About */}
-          <div className="flex flex-col">
-            <a href="#" className="relative flex items-center justify-start h-12 md:h-16 w-[180px] md:w-[220px] mb-6 group -ml-2 z-10">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <a href="#" className="inline-block mb-2 group">
               <img 
                 src="/imgs/logo_up_horizontal.png" 
                 alt="UP Telecom" 
-                className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-auto min-w-[250px] md:min-w-[320px] pointer-events-none object-contain transform-gpu origin-left group-hover:scale-105 transition-transform duration-300" 
+                className="w-[160px] md:w-[180px] h-auto object-contain transform-gpu group-hover:scale-105 transition-transform duration-300 -ml-4 lg:ml-0" 
               />
             </a>
-            <p className="text-sm leading-relaxed mb-8 font-medium">
+            <p className="text-sm leading-relaxed mb-8 font-medium max-w-sm">
               A UP Telecom é um provedor de internet ultra rápida com tecnologia 100% fibra óptica, modernas redes próprias e equipamentos de última geração.
             </p>
-            <div className="flex gap-3">
+            <div className="flex justify-center lg:justify-start gap-3">
               <a href="https://instagram.com/uptelecom_conect" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:border-transparent text-white flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/20 hover:-translate-y-1">
                 <img src="/imgs/insta_logo.png" alt="Instagram" className="w-6 h-6 rounded-md" />
               </a>
