@@ -17,8 +17,8 @@ export default function Coverage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-8">
               <MapPin size={32} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tight">
-              Verifique a <span className="text-[var(--brand-blue)]">disponibilidade</span> na sua rua
+            <h2 className="font-bebas text-5xl md:text-6xl mb-6 text-white tracking-wide">
+              Cobertura na sua <span className="text-[var(--brand-blue)]">região</span>
             </h2>
             <p className="text-lg text-slate-400 mb-10 font-medium">
               Nossa rede 100% fibra óptica está em constante expansão na Colônia Agrícola 26 de Setembro. 
@@ -51,7 +51,7 @@ export default function Coverage() {
           </div>
 
           <div className="flex-1 w-full">
-            <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+            <div className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl relative border-4 border-white/10 group">
               <div className="absolute inset-0 bg-slate-900">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15360.771141381387!2d-48.0673322!3d-15.7876879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a33118d0cc493%3A0xc39cb6754093c8d1!2sCol%C3%B4nia%20Agr%C3%ADcola%2026%20de%20Setembro%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1709230000000!5m2!1spt-BR!2sbr" 

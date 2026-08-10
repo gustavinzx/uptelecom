@@ -44,7 +44,7 @@ export default function Features() {
             }} />
             <div className="relative z-10">
               <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-4">Tecnologia de ponta</p>
-              <h2 className="text-5xl md:text-6xl font-black leading-none mb-4 text-white">
+              <h2 className="font-bebas text-6xl md:text-8xl leading-[0.9] mb-4 text-white tracking-normal">
                 100%<br />Fibra<br />Própria
               </h2>
               <p className="text-white/80 text-lg font-medium max-w-md">
@@ -54,7 +54,7 @@ export default function Features() {
             <div className="relative z-10 mt-8">
               <a
                 href="#planos"
-                className="inline-flex items-center gap-2 bg-white text-[var(--brand-primary)] px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[var(--brand-primary)] px-8 py-4 rounded-full font-bebas text-xl tracking-wider hover:bg-gray-200 transition-colors pt-5"
               >
                 Ver planos
               </a>
@@ -65,7 +65,7 @@ export default function Features() {
           <div className="flex flex-col gap-6">
             {stats.map((s) => (
               <div key={s.value} className="flex-1 bg-[#0b1220]/60 backdrop-blur-md border border-white/10 rounded-xl px-8 py-6 flex flex-col justify-center">
-                <p className="text-4xl font-black text-[var(--brand-blue)] leading-none mb-1">{s.value}</p>
+                <p className="font-bebas text-5xl md:text-6xl text-[var(--brand-blue)] leading-none mb-1 tracking-wide">{s.value}</p>
                 <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}

@@ -8,9 +8,9 @@ export default function SocialMedia() {
           
           {/* Text & Links Side */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Acompanhe a <span className="text-[var(--brand-primary)]">UP Telecom</span> nas redes
-            </h2>
+            <h2 className="font-bebas text-5xl md:text-6xl mb-6 text-white tracking-wide">
+            Siga-nos nas <span className="text-[var(--brand-primary)]">Redes Sociais</span>
+          </h2>
             <p className="text-lg md:text-xl text-slate-400 font-medium mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Fique por dentro das nossas novidades, promoções exclusivas e dicas para melhorar ainda mais a sua conexão em casa. Siga nossos perfis oficiais!
             </p>
@@ -50,7 +50,7 @@ export default function SocialMedia() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 bg-[var(--brand-primary)]/10 rounded-full blur-3xl pointer-events-none" />
             
             {/* Video Container (Smartphone Mockup style) */}
-            <div className="relative z-10 w-full max-w-[320px] aspect-[9/16] bg-black rounded-[2.5rem] p-3 shadow-2xl border-4 border-gray-900 group">
+              <div className="flex-1 w-full max-w-[280px] md:max-w-[320px] aspect-[9/16] bg-transparent rounded-[2rem] overflow-hidden border-[6px] border-white/20 shadow-2xl relative mx-auto group">
               <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-gray-800">
                 
                 {/* Real Instagram Embed */}

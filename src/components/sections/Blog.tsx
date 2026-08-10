@@ -100,7 +100,7 @@ export default function Blog() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h2 className="font-bebas text-5xl md:text-7xl mb-6 text-white tracking-wide">
               Nosso Blog
             </h2>
             <p className="text-xl md:text-2xl text-slate-400 font-medium max-w-3xl">
@@ -116,7 +116,7 @@ export default function Blog() {
               onClick={() => setSelectedPost(p)}
               className="group cursor-pointer rounded-2xl overflow-hidden bg-[#0b1220]/60 backdrop-blur-md shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 hover:border-white/30 flex flex-col"
             >
-              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden rounded-t-2xl bg-[#15233f]">
+              <div className="relative w-full h-[250px] md:h-[350px] overflow-hidden rounded-t-2xl bg-transparent">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -128,7 +128,7 @@ export default function Blog() {
                 <span className="text-sm font-bold text-[var(--brand-blue)] mb-4 tracking-wider uppercase">
                   {p.date}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white leading-snug group-hover:text-[var(--brand-blue)] transition-colors">
+                <h3 className="font-bebas text-3xl md:text-4xl mb-4 text-white leading-snug group-hover:text-[var(--brand-blue)] transition-colors tracking-wide pt-1">
                   {p.title}
                 </h3>
                 <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed mb-6 flex-1">
@@ -169,7 +169,7 @@ export default function Blog() {
                     <span className="inline-block bg-[var(--brand-primary)] text-white px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase mb-6">
                       {selectedPost.date}
                     </span>
-                    <h3 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl">
+                    <h3 className="font-bebas text-5xl md:text-7xl text-white leading-[0.9] max-w-4xl tracking-wide">
                       {selectedPost.title}
                     </h3>
                   </div>
@@ -182,12 +182,12 @@ export default function Blog() {
                 </div>
                 
                 <div className="mt-20 pt-10 border-t border-white/10">
-                   <h4 className="text-2xl font-bold mb-6 text-center text-white">Gostou deste artigo?</h4>
+                   <h4 className="font-bebas text-4xl mb-6 text-center text-white tracking-wide">Gostou deste artigo?</h4>
                    <div className="flex justify-center gap-4">
-                      <button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg">
+                      <button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 py-4 rounded-xl font-bebas text-2xl tracking-wide shadow-lg pt-5">
                         Conhecer Planos
                       </button>
-                      <button onClick={() => setSelectedPost(null)} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-sm">
+                      <button onClick={() => setSelectedPost(null)} className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bebas text-2xl tracking-wide shadow-sm pt-5">
                         Ler mais conteúdos
                       </button>
                    </div>

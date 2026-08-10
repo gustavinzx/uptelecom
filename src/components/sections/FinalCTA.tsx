@@ -7,10 +7,9 @@ export default function FinalCTA() {
     <section className="py-24 bg-[#0b1220] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
-            Pronto para a verdadeira{" "}
-            <span className="text-[var(--brand-primary)]">ultravelocidade?</span>
-          </h2>
+            <h2 className="font-bebas text-5xl md:text-7xl mb-8 text-white tracking-wide">
+              Pronto para ter a <span className="text-[var(--brand-primary)]">melhor conexão</span>?
+            </h2>
           <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">
             Fale com um consultor agora ou deixe seu número que nós ligamos para você em instantes.
           </p>

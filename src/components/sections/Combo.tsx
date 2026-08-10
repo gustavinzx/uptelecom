@@ -15,7 +15,7 @@ export default function Combo() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="font-bebas text-5xl md:text-6xl lg:text-7xl mb-6 text-white tracking-wide">
             Seus <span className="text-[var(--brand-primary)]">Streamings</span> Favoritos
           </h2>
           <p className="text-lg text-slate-300 font-medium max-w-2xl mx-auto">

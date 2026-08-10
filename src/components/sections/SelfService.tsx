@@ -15,9 +15,9 @@ export default function SelfService() {
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Tudo na palma da sua mão
-          </h2>
+            <h2 className="font-bebas text-5xl md:text-6xl mb-4 tracking-wide text-white">
+              Sua Área do <span className="text-[var(--brand-primary)]">Assinante</span>
+            </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-medium">
             Com a central do assinante e nosso app exclusivo, você resolve tudo sem precisar ligar.
           </p>

@@ -49,8 +49,8 @@ export default function Testimonials() {
         
         {/* Left Side (Title + Callout Card) */}
         <div className="w-full lg:w-1/3 flex flex-col gap-6">
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight">
-            Quem escolhe UP Telecom <span className="text-[var(--brand-blue)]">recomenda</span>
+          <h2 className="font-bebas text-5xl md:text-6xl text-white leading-[1] tracking-wide">
+            Quem escolhe UP Telecom <span className="text-[var(--brand-blue)] drop-shadow-md">recomenda</span>
           </h2>
           <p className="text-slate-500 font-medium">
             Avaliações reais de clientes que confiam na nossa internet para navegar com estabilidade, velocidade e atendimento próximo.
@@ -71,7 +71,7 @@ export default function Testimonials() {
             <div className="flex items-center gap-3">
               <GoogleLogo />
               <div>
-                <h4 className="font-black text-xl text-white">Avaliações Google</h4>
+                <h4 className="font-bebas text-3xl text-white tracking-wide">Avaliações Google</h4>
                 <p className="text-xs text-slate-400 font-medium">Avaliações verificadas de clientes reais.</p>
               </div>
             </div>

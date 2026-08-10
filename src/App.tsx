@@ -1,6 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import BannerCarousel from "./components/sections/BannerCarousel";
+import Hero from "./components/sections/Hero";
 import Plans from "./components/sections/Plans";
 import Combo from "./components/sections/Combo";
 import Features from "./components/sections/Features";
@@ -16,7 +16,7 @@ function App() {
     <div className="min-h-screen bg-[var(--surface-bg)] flex flex-col font-sans">
       <Navbar />
       <main className="flex-1">
-        <BannerCarousel />
+        <Hero />
         <Plans />
         <Combo />
         <Features />
