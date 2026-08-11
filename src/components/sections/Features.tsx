@@ -26,7 +26,7 @@ import { DarkImageOverlay } from "@/components/ui/DarkImageOverlay";
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/Features.jpg')" }}>
+    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/Features.webp')" }}>
       <DarkImageOverlay />
       
       <Reveal direction="left" className="max-w-6xl mx-auto px-6 relative z-10">

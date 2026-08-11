@@ -1,16 +1,16 @@
 
 
 const streamings = [
-  { name: "Max", logo: "/imgs/hbo.png", desc: "Filmes, séries e documentários incríveis." },
-  { name: "Disney+", logo: "/imgs/disney.png", desc: "A magia da Disney e esportes da ESPN." },
-  { name: "Globoplay", logo: "/imgs/globoplay.png", desc: "Novelas, filmes e séries originais." },
-  { name: "Apple TV", logo: "/imgs/appletv.png", desc: "Produções exclusivas e originais Apple." }
+  { name: "Max", logo: "/imgs/hbo.webp", desc: "Filmes, séries e documentários incríveis." },
+  { name: "Disney+", logo: "/imgs/disney.webp", desc: "A magia da Disney e esportes da ESPN." },
+  { name: "Globoplay", logo: "/imgs/globoplay.webp", desc: "Novelas, filmes e séries originais." },
+  { name: "Apple TV", logo: "/imgs/appletv.webp", desc: "Produções exclusivas e originais Apple." }
 ];
 import { Reveal } from "@/components/ui/Reveal";
 
 export default function Combo() {
   return (
-    <section id="combos" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/StreamingsCombo2.jpg')" }}>
+    <section id="combos" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/StreamingsCombo2.webp')" }}>
       {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
       <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
       {/* Leve vignette radial para focar no centro */}

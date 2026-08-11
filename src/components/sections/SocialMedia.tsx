@@ -2,7 +2,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export default function SocialMedia() {
   return (
-    <section id="redes-sociais" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/RedesSociais.jpg')" }}>
+    <section id="redes-sociais" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/RedesSociais.webp')" }}>
       {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
       <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
       {/* Leve vignette radial para focar no centro */}
@@ -28,7 +28,7 @@ export default function SocialMedia() {
               <div className="relative shrink-0">
                 <div className="absolute -inset-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 rounded-full blur opacity-75"></div>
                 <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center border-2 border-[#0b1220] overflow-hidden">
-                  <img src="/imgs/logo_insta_up.jpg" alt="UP Telecom" className="w-full h-full object-cover" />
+                  <img src="/imgs/logo_insta_up.webp" alt="UP Telecom" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div>
@@ -60,7 +60,7 @@ export default function SocialMedia() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
               >
-                <img src="/imgs/insta_logo.png" alt="Instagram" className="w-6 h-6 rounded-md" />
+                <img src="/imgs/insta_logo.webp" alt="Instagram" className="w-6 h-6 rounded-md" />
                 Seguir @uptelecom_conect
               </a>
             </div>

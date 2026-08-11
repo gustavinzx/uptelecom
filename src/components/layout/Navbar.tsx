@@ -41,9 +41,11 @@ export default function Navbar() {
         }
       }
 
-      // If we are at the absolute bottom of the page, force the last nav link (Contato)
+      // If we are at the absolute bottom of the page, force the last nav link
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
-        currentActive = 'rodape';
+        if (elements.length > 0) {
+          currentActive = elements[elements.length - 1].id;
+        }
       }
 
       if (currentActive !== activeSection) {
@@ -65,7 +67,7 @@ export default function Navbar() {
       )}
     >
       <div className={cn(
-        "flex items-center justify-between px-8 py-3 rounded-full transition-all duration-500 border",
+        "flex items-center justify-between gap-6 px-8 py-3 rounded-full transition-all duration-500 border",
         scrolled
           ? "bg-[#0b1220] shadow-2xl border-white/10"
           : "bg-transparent backdrop-blur-sm border-transparent"
@@ -80,7 +82,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
@@ -88,18 +90,13 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "relative transition-all duration-300 font-anton uppercase tracking-widest text-xl group-hover:text-white py-2",
+                  "font-nav font-semibold normal-case text-sm px-5 py-2.5 rounded-full transition-all duration-300",
                   isActive
-                    ? "text-[var(--brand-blue)] drop-shadow-[0_0_8px_rgba(0,85,255,0.5)]"
-                    : "text-slate-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                    ? "bg-[var(--brand-blue)] text-white shadow-[0_0_15px_rgba(0,85,255,0.4)]"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
                 )}
               >
                 {link.name}
-                {/* Animated underline */}
-                <span className={cn(
-                  "absolute -bottom-1 left-0 h-1 bg-[var(--brand-blue)] transition-all duration-300",
-                  isActive ? "w-full shadow-[0_0_10px_rgba(0,85,255,0.8)]" : "w-0 group-hover:w-full"
-                )} />
               </a>
             );
           })}
@@ -113,7 +110,7 @@ export default function Navbar() {
             rel="noreferrer"
             className="relative inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] text-white px-8 py-3 transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.4)] hover:shadow-[0_0_30px_rgba(230,0,0,0.6)] hover:-translate-y-1 overflow-hidden group"
           >
-            <span className="relative z-10 tracking-widest font-anton text-lg uppercase">Consultar viabilidade</span>
+            <span className="relative z-10 font-nav font-semibold text-sm normal-case">Central do Assinante</span>
             {/* Shine effect */}
             <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out_infinite]" />
           </a>
@@ -137,8 +134,10 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={cn(
-                          "text-2xl sm:text-3xl font-anton uppercase tracking-widest transition-colors",
-                          isActive ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
+                          "font-nav font-semibold normal-case text-2xl sm:text-3xl px-6 py-2 rounded-full transition-all",
+                          isActive
+                            ? "bg-[var(--brand-blue)] text-white shadow-[0_0_15px_rgba(0,85,255,0.4)]"
+                            : "text-slate-300 hover:text-white"
                         )}
                       >
                         {link.name}
@@ -150,9 +149,9 @@ export default function Navbar() {
                   href="https://sistema.upconexion.com.br/central_assinante_web/login"
                   target="_blank"
                   rel="noreferrer"
-                  className="relative overflow-hidden text-lg font-anton tracking-widest uppercase text-white bg-[var(--brand-primary)] px-6 py-4 rounded-full text-center mt-auto mb-8 transition-all shadow-[0_0_20px_rgba(230,0,0,0.4)]"
+                  className="relative overflow-hidden text-lg font-nav font-semibold normal-case text-white bg-[var(--brand-primary)] px-6 py-4 rounded-full text-center mt-auto mb-8 transition-all shadow-[0_0_20px_rgba(230,0,0,0.4)]"
                 >
-                  <span className="relative z-10">Consultar viabilidade</span>
+                  <span className="relative z-10">Central do Assinante</span>
                 </a>
               </nav>
             </SheetContent>

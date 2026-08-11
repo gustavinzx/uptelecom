@@ -12,7 +12,7 @@ const slides = [
       </>
     ),
     subtitle: "Somos ultra rápido porque nossa rede é 100% em fibra óptica, com equipamentos modernos e de última geração. Planos de até 300MB.",
-    bgImage: "/imgs/slide1.webp",
+    bgImage: "/imgs/slide1.webp?v=4",
   },
   {
     id: 2,
@@ -23,7 +23,8 @@ const slides = [
       </>
     ),
     subtitle: "Trabalhe, assista a filmes em 4K e jogue online com estabilidade máxima para toda a família.",
-    bgImage: "/imgs/bg_plans_hq.webp",
+    bgImage: "/imgs/bg_plans_hq.jpg?v=7",
+    objectPosition: "object-top",
   },
   {
     id: 3,
@@ -34,7 +35,7 @@ const slides = [
       </>
     ),
     subtitle: "A melhor experiência de streaming e jogos com roteadores Wi-Fi de longo alcance.",
-    bgImage: "/imgs/bg_combo_hq.webp",
+    bgImage: "/imgs/bg_combo_hq.jpg?v=7",
   }
 ];
 
@@ -65,7 +66,7 @@ export default function Hero() {
                   alt=""
                   loading={slide.id === 1 ? "eager" : "lazy"}
                   fetchPriority={slide.id === 1 ? "high" : "auto"}
-                  className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
+                  className={`absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform ${slide.objectPosition || "object-center"}`}
                 />
 
 

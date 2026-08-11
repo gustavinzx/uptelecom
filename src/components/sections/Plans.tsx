@@ -107,7 +107,7 @@ import { DarkImageOverlay } from "@/components/ui/DarkImageOverlay";
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 text-white relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/familia.jpg')" }}>
+    <section id="planos" className="py-24 text-white relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/familia.webp')" }}>
       <DarkImageOverlay />
       
       {/* Content */}

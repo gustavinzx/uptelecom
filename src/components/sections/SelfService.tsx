@@ -10,7 +10,7 @@ const services = [
 
 export default function SelfService() {
   return (
-    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Conta.jpg')" }}>
+    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Conta.webp')" }}>
       {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
       <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
       {/* Leve vignette radial para focar no centro */}
@@ -48,7 +48,7 @@ export default function SelfService() {
           
           <div className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0 relative">
              <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full" />
-             <img src="/imgs/astro_5.png" alt="Mascote UP Telecom no App" loading="lazy" decoding="async" className="relative z-10 w-full max-w-[450px] animate-float motion-reduce:animate-none drop-shadow-2xl" />
+             <img src="/imgs/astro_5.webp" alt="Mascote UP Telecom no App" loading="lazy" decoding="async" className="relative z-10 w-full max-w-[450px] animate-float motion-reduce:animate-none drop-shadow-2xl" />
           </div>
         </div>
       </Reveal>

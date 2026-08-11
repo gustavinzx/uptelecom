@@ -60,6 +60,7 @@ export default {
   		},
         fontFamily: {
             anton: ['"Anton"', 'sans-serif'],
+            nav: ['"Plus Jakarta Sans"', 'sans-serif'],
         },
   		keyframes: {
   			'accordion-down': {

@@ -43,7 +43,7 @@ const StarIcon = ({ filled }: { filled: boolean }) => (
 
 export default function Testimonials() {
   return (
-    <section id="avaliacoes" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/Avaliaçao.jpg')" }}>
+    <section id="avaliacoes" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/Avaliaçao.webp')" }}>
       {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
       <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
       {/* Leve vignette radial para focar no centro */}

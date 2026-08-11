@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export default function FinalCTA() {
   return (
-    <section id="rodape" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Ligaçoes.jpg')" }}>
+    <section id="rodape" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Ligaçoes.webp')" }}>
       {/* Premium Gradients: Névoa suave com mix-blend-mode para escurecimento orgânico */}
       <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0b1220_100%)] opacity-50 z-0 pointer-events-none" />
@@ -20,7 +20,7 @@ export default function FinalCTA() {
         
         <div className="relative mb-8">
            <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full" />
-           <img src="/imgs/astro_3.png" alt="Mascote UP Telecom Assinando" className="relative z-10 w-full max-w-[200px] animate-float drop-shadow-2xl mx-auto" />
+           <img src="/imgs/astro_3.webp" alt="Mascote UP Telecom Assinando" className="relative z-10 w-full max-w-[200px] animate-float drop-shadow-2xl mx-auto" />
         </div>
 
         <h2 className="font-anton text-4xl md:text-6xl mb-6 text-white tracking-wide">
