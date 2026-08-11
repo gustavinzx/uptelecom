@@ -5,11 +5,13 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export default function FinalCTA() {
   return (
-    <section id="rodape" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_contact.jpg')" }}>
-      {/* Dark Overlay with smooth top/bottom gradients */}
-      <div className="absolute inset-0 bg-[#0b1220]/80 backdrop-blur-[2px] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
+    <section id="rodape" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Ligaçoes.jpg')" }}>
+      {/* Premium Gradients: Névoa suave com mix-blend-mode para escurecimento orgânico */}
+      <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0b1220_100%)] opacity-50 z-0 pointer-events-none" />
+      {/* Transições ultra suaves nas bordas */}
+      <div className="absolute top-0 inset-x-0 h-[400px] bg-gradient-to-b from-[#0b1220] via-[#0b1220]/60 to-transparent pointer-events-none z-0" />
+      <div className="absolute bottom-0 inset-x-0 h-[400px] bg-gradient-to-t from-[#0b1220] via-[#0b1220]/60 to-transparent pointer-events-none z-0" />
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[var(--brand-primary)]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--brand-blue)]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none mix-blend-overlay" />

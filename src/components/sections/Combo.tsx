@@ -10,11 +10,16 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export default function Combo() {
   return (
-    <section id="combos" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_combo_hq.jpg')" }}>
-      {/* Dark Gradient Overlay for Fade effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
+    <section id="combos" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/StreamingsCombo2.jpg')" }}>
+      {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
+      <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
+      {/* Leve vignette radial para focar no centro */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0b1220_100%)] opacity-50 z-0 pointer-events-none" />
+      {/* Transições ultra suaves nas bordas, sem cortes abruptos */}
+      <div className="absolute top-0 inset-x-0 h-[400px] bg-gradient-to-b from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-[400px] bg-gradient-to-t from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
 
-      <Reveal delay={200} className="max-w-6xl mx-auto px-6 relative z-10">
+      <Reveal direction="up" className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-12">
           
           <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 relative">

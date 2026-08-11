@@ -24,16 +24,22 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
-      {/* Dark Gradient Overlay for Fade effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
+    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/Features.jpg')" }}>
+      {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
+      <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
+      {/* Leve vignette radial para focar no centro */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0b1220_100%)] opacity-50 z-0 pointer-events-none" />
+      {/* Transições ultra suaves nas bordas, sem cortes abruptos */}
+      <div className="absolute top-0 inset-x-0 h-[400px] bg-gradient-to-b from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-[400px] bg-gradient-to-t from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
+      
       <Reveal direction="left" className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           
           {/* Main Card - 100% Fibra */}
-          <div className="lg:col-span-2 lg:row-span-2 bg-gradient-to-br from-[var(--brand-primary)] to-[#8a082a] text-white rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden shadow-[0_20px_50px_rgba(169,10,52,0.3)] group hover:-translate-y-2 transition-transform duration-500">
+          <div className="lg:col-span-2 lg:row-span-2 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[var(--brand-primary)] via-[#cc0000] to-[#59041a] text-white rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden shadow-[0_20px_50px_rgba(169,10,52,0.3)] group hover:-translate-y-2 transition-transform duration-500">
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay" />
             <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none group-hover:bg-white/20 transition-all duration-500" />

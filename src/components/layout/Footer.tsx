@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer id="rodape" className="bg-[#0b1220] text-slate-400 py-16 border-t border-white/10 relative overflow-hidden">
       {/* Background Decorators */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-primary)]/50 to-transparent" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--brand-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--brand-blue)]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-primary)]/30 to-transparent" />
+      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[var(--brand-primary)]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-[var(--brand-blue)]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">

@@ -10,12 +10,14 @@ const services = [
 
 export default function SelfService() {
   return (
-    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/bg_app.jpg')" }}>
-      {/* Dark Overlay with smooth top/bottom gradients */}
-      <div className="absolute inset-0 bg-[#0b1220]/75 backdrop-blur-[2px] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1220] to-transparent pointer-events-none z-0" />
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0b1220] to-transparent pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220]/60 to-transparent pointer-events-none" />
+    <section id="autoatendimento" className="py-24 text-white relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/imgs/Conta.jpg')" }}>
+      {/* Névoa suave com mix-blend-mode para escurecimento orgânico */}
+      <div className="absolute inset-0 bg-[#0b1220] mix-blend-multiply opacity-60 z-0 pointer-events-none" />
+      {/* Leve vignette radial para focar no centro */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0b1220_100%)] opacity-50 z-0 pointer-events-none" />
+      {/* Transições ultra suaves nas bordas, sem cortes abruptos */}
+      <div className="absolute top-0 inset-x-0 h-[400px] bg-gradient-to-b from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-[400px] bg-gradient-to-t from-[#0b1220] via-[#0b1220]/60 to-transparent z-0 pointer-events-none" />
       
       <Reveal className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
