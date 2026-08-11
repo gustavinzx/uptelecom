@@ -37,8 +37,8 @@ export default function FinalCTA() {
             </div>
             <h3 className="text-2xl font-bold mb-3 text-white">Atendimento Rápido</h3>
             <p className="text-slate-400 mb-8 font-medium">Chame no WhatsApp e tire todas as suas dúvidas na hora com um especialista.</p>
-            <a
-              href="https://wa.me/5561981765721"
+            <a 
+              href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Gostaria de falar com um especialista para assinar a internet da UP Telecom.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 uppercase tracking-wide"
@@ -59,11 +59,23 @@ export default function FinalCTA() {
             </div>
             <p className="text-slate-400 mb-6 font-medium relative z-10">Preencha os dados abaixo e entramos em contato rapidinho.</p>
             
-            <form className="space-y-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
-              <Input placeholder="Seu nome completo" className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
+            <form 
+              className="space-y-4 relative z-10" 
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                const nome = formData.get('nome');
+                const celular = formData.get('celular');
+                const cep = formData.get('cep');
+                
+                const mensagem = `Olá! Me chamo *${nome}* e gostaria que a UP Telecom me ligasse.\nMeu número é: ${celular}\nMeu CEP é: ${cep}`;
+                window.open(`https://wa.me/5561981773495?text=${encodeURIComponent(mensagem)}`, '_blank');
+              }}
+            >
+              <Input name="nome" placeholder="Seu nome completo" className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
               <div className="grid grid-cols-2 gap-4">
-                <Input placeholder="Celular (DDD)" type="tel" className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
-                <Input placeholder="CEP" maxLength={9} className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
+                <Input name="celular" placeholder="Celular (DDD)" type="tel" className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
+                <Input name="cep" placeholder="CEP" maxLength={9} className="h-12 bg-[#15233f] border-white/10 text-white placeholder-slate-400" required />
               </div>
               <Button type="submit" className="w-full h-12 text-lg font-bold bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] mt-2 rounded-xl shadow-md">
                 Quero que me liguem

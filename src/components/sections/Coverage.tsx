@@ -1,74 +1,120 @@
-import { MapPin, Search } from "lucide-react";
+import { MapPin, MessageCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionBackground } from "@/components/ui/SectionBackground";
 
 export default function Coverage() {
-  const [cep, setCep] = useState("");
-
   return (
-    <section id="cobertura" className="py-24 relative overflow-hidden bg-[#0b1220]">
-      <SectionBackground variant="map" />
+    <section id="cobertura" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_coverage.jpg')" }}>
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       
-      <Reveal direction="right" className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-8">
-              <MapPin size={32} />
-            </div>
-            <h2 className="font-anton text-4xl md:text-5xl mb-6 text-white tracking-wide">
-              Cobertura na sua <span className="text-[var(--brand-blue)]">região</span>
-            </h2>
-            <p className="text-lg text-slate-400 mb-10 font-medium">
-              Nossa rede 100% fibra óptica está em constante expansão na Colônia Agrícola 26 de Setembro. 
-              Consulte agora se já chegamos no seu endereço.
-            </p>
+      <Reveal direction="up" className="max-w-6xl mx-auto px-6 relative z-10">
+        
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] mb-6 shadow-[0_0_30px_rgba(0,85,255,0.2)]">
+            <MapPin size={32} />
+          </div>
+          <h2 className="font-anton text-4xl md:text-5xl lg:text-6xl mb-6 text-white tracking-wide drop-shadow-md">
+            Onde estamos <span className="text-[var(--brand-blue)]">presentes</span>
+          </h2>
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
+            Nossa rede 100% fibra óptica é dedicada e exclusiva. Atendemos com excelência e estabilidade máxima nas seguintes regiões:
+          </p>
+        </div>
 
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto lg:mx-0" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative flex-1">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Search size={20} className="text-slate-400" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Digite seu CEP"
-                  className="w-full h-14 pl-12 pr-4 rounded-full border border-white/20 focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)]/20 outline-none transition-all bg-[#0b1220]/60 backdrop-blur-md text-lg font-medium text-white placeholder-slate-400"
-                  value={cep}
-                  onChange={(e) => setCep(e.target.value)}
-                />
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          
+          {/* Card 1: 26 de Setembro */}
+          <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden flex flex-col shadow-2xl group hover:border-[var(--brand-blue)]/30 hover:shadow-[0_10px_40px_rgba(0,85,255,0.15)] transition-all duration-300">
+            <div className="w-full h-[250px] relative bg-slate-900 border-b border-white/10 overflow-hidden">
+              <iframe 
+                src="https://maps.google.com/maps?q=Col%C3%B4nia+Agr%C3%ADcola+26+de+Setembro,+DF&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: "grayscale(80%) invert(90%) contrast(85%)" }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa de Cobertura 26 de Setembro"
+                className="group-hover:scale-105 transition-transform duration-700"
+              ></iframe>
+              <div className="absolute top-4 right-4 bg-[var(--brand-blue)] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                100% FIBRA
               </div>
-              <button
-                type="button"
+            </div>
+            
+            <div className="p-8 flex flex-col flex-1">
+              <h3 className="font-anton text-3xl text-white tracking-wide mb-1">
+                26 de Setembro
+              </h3>
+              <p className="text-[var(--brand-primary)] font-bold text-sm tracking-widest uppercase mb-4">
+                Distrito Federal
+              </p>
+              <p className="text-slate-400 font-medium leading-relaxed mb-8 flex-1">
+                Atendimento premium com internet sem quedas para os moradores da Colônia Agrícola 26 de Setembro e região.
+              </p>
+              
+              <a 
+                href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Sou de 26 de Setembro e gostaria de saber mais sobre a internet de vocês.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-14 bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white px-8 font-black rounded-full text-lg shadow-lg shadow-[var(--brand-primary)]/20 transition-transform hover:-translate-y-1 w-full sm:w-auto uppercase tracking-wide"
+                  "w-full rounded-xl bg-white/5 hover:bg-[var(--brand-blue)] text-white hover:text-white border border-white/10 hover:border-[var(--brand-blue)] transition-all font-bold text-lg h-14"
                 )}
               >
-                Consultar
-              </button>
-            </form>
-          </div>
-
-          <div className="flex-1 w-full">
-            <div className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl relative border-4 border-white/10 group">
-              <div className="absolute inset-0 bg-slate-900">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15360.771141381387!2d-48.0673322!3d-15.7876879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a33118d0cc493%3A0xc39cb6754093c8d1!2sCol%C3%B4nia%20Agr%C3%ADcola%2026%20de%20Setembro%2C%20Bras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1709230000000!5m2!1spt-BR!2sbr" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0, filter: "grayscale(80%) invert(90%) contrast(85%)" }} 
-                  allowFullScreen={false} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mapa de Cobertura"
-                ></iframe>
-              </div>
+                <MessageCircle size={20} className="mr-2" />
+                Quero assinar aqui
+              </a>
             </div>
           </div>
+
+          {/* Card 2: Jardim Serra Dourada */}
+          <div className="bg-[#0b1220]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden flex flex-col shadow-2xl group hover:border-[var(--brand-primary)]/30 hover:shadow-[0_10px_40px_rgba(230,0,0,0.15)] transition-all duration-300">
+            <div className="w-full h-[250px] relative bg-slate-900 border-b border-white/10 overflow-hidden">
+              <iframe 
+                src="https://maps.google.com/maps?q=Jardim+Serra+Dourada,+Santo+Ant%C3%B4nio+do+Descoberto+-+GO&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: "grayscale(80%) invert(90%) contrast(85%)" }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa de Cobertura Jardim Serra Dourada"
+                className="group-hover:scale-105 transition-transform duration-700"
+              ></iframe>
+              <div className="absolute top-4 right-4 bg-[var(--brand-primary)] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                100% FIBRA
+              </div>
+            </div>
+            
+            <div className="p-8 flex flex-col flex-1">
+              <h3 className="font-anton text-3xl text-white tracking-wide mb-1">
+                Jardim Serra Dourada
+              </h3>
+              <p className="text-[var(--brand-blue)] font-bold text-sm tracking-widest uppercase mb-4">
+                Santo Antônio do Descoberto - GO
+              </p>
+              <p className="text-slate-400 font-medium leading-relaxed mb-8 flex-1">
+                Chegamos com tudo no SAD trazendo infraestrutura de ponta e suporte técnico local para a região do Jardim Serra Dourada.
+              </p>
+              
+              <a 
+                href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Sou do Jardim Serra Dourada (SAD) e gostaria de assinar a internet da UP Telecom.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "w-full rounded-xl bg-white/5 hover:bg-[var(--brand-primary)] text-white hover:text-white border border-white/10 hover:border-[var(--brand-primary)] transition-all font-bold text-lg h-14"
+                )}
+              >
+                <MessageCircle size={20} className="mr-2" />
+                Quero assinar aqui
+              </a>
+            </div>
+          </div>
+
         </div>
       </Reveal>
     </section>

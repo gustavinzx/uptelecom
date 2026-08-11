@@ -19,7 +19,7 @@ export default function Combo() {
           
           <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 relative">
              <div className="absolute inset-0 bg-[var(--brand-primary)]/20 blur-3xl rounded-full" />
-             <img src="/imgs/astro_1.png" alt="Mascotes UP Telecom com Pipoca" className="relative z-10 w-full max-w-[400px] animate-float drop-shadow-2xl" />
+             <img src="/imgs/astro_1.webp" alt="Mascotes UP Telecom com Pipoca" loading="lazy" decoding="async" className="relative z-10 w-full max-w-[400px] animate-float motion-reduce:animate-none drop-shadow-2xl" />
           </div>
 
           <div className="w-full lg:w-1/2 text-left order-1 lg:order-2">
@@ -40,11 +40,13 @@ export default function Combo() {
             {[...streamings, ...streamings, ...streamings, ...streamings].map((s, idx) => (
               <div key={idx} className="w-[280px] rounded-xl bg-white p-8 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col shrink-0">
                 <div className="h-16 flex items-center justify-center mb-6">
-                  <img src={s.logo} alt={s.name} className="max-h-full max-w-[120px] object-contain drop-shadow-sm" />
+                  <img src={s.logo} alt={s.name} loading="lazy" decoding="async" className="max-h-full max-w-[120px] object-contain drop-shadow-sm" />
                 </div>
                 <p className="text-sm text-gray-500 mb-8 flex-1 font-medium leading-relaxed">{s.desc}</p>
                 <a 
-                  href="#planos"
+                  href={`https://wa.me/5561981773495?text=${encodeURIComponent(`Olá! Quero turbinar minha internet e adicionar o *${s.name}* no meu plano. Como funciona?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors uppercase tracking-wider py-2 border-t border-gray-100 block w-full min-h-[44px] flex items-center justify-center"
                 >
                   Quero {s.name}

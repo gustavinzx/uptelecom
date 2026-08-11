@@ -58,7 +58,7 @@ export default function Testimonials() {
           </p>
           <div className="relative mt-8 hidden lg:block">
             <div className="absolute inset-0 bg-white/5 blur-3xl rounded-full" />
-            <img src="/imgs/astro_4.png" alt="Mascotes UP Telecom Aprovam" className="relative z-10 w-full max-w-[320px] animate-float drop-shadow-2xl" />
+            <img src="/imgs/astro_4.webp" alt="Mascotes UP Telecom Aprovam" loading="lazy" decoding="async" className="relative z-10 w-full max-w-[320px] animate-float motion-reduce:animate-none drop-shadow-2xl" />
           </div>
 
           <div className="bg-[var(--brand-blue)]/10 border border-[var(--brand-blue)]/20 rounded-2xl p-6 shadow-xl text-white mt-4 relative overflow-hidden backdrop-blur-md">
@@ -90,7 +90,7 @@ export default function Testimonials() {
             {reviews.map((r, i) => (
               <div key={i} className="snap-center shrink-0 w-full sm:w-[320px] bg-[#0b1220]/80 border border-white/5 rounded-xl p-6 flex flex-col shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <img src={r.avatar} alt={r.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                  <img src={r.avatar} alt={r.name} loading="lazy" decoding="async" className="w-10 h-10 rounded-full object-cover shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-sm flex items-center gap-1 text-white truncate">
                       {r.name} <BadgeCheck size={14} className="text-[var(--brand-blue)]" />

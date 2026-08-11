@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" className="flex items-center justify-center shrink-0 group relative w-[160px] h-[40px] overflow-hidden">
           <img 
-            src="/imgs/imagemtelecom.png" 
+            src="/imgs/logo_up_horizontal.webp" 
             alt="UP Telecom" 
             className="w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain z-10 group-hover:scale-105 transition-transform duration-500" 
           />
@@ -115,10 +115,10 @@ export default function Navbar() {
               <Menu size={28} />
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#0b1220]/95 backdrop-blur-xl border-white/10 flex flex-col">
-              <SheetTitle className="text-left mb-10 mt-4 flex items-center gap-3">
-                <img src="/imgs/imagemtelecom.png" alt="UP Telecom" className="h-16 w-auto" />
+              <SheetTitle className="mb-12 mt-8 flex items-center justify-center w-full">
+                <img src="/imgs/logo_up_horizontal.webp" alt="UP Telecom" className="w-[180px] sm:w-[220px] object-contain" />
               </SheetTitle>
-              <nav className="flex flex-col gap-6 mt-4">
+              <nav className="flex flex-col items-center justify-center gap-8 mt-4 text-center">
                 {navLinks.map((link) => {
                   const isActive = activeSection === link.href.replace('#', '');
                   return (
@@ -126,7 +126,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={cn(
-                          "text-lg font-bold uppercase tracking-wider transition-colors",
+                          "text-xl sm:text-2xl font-black uppercase tracking-widest transition-colors",
                           isActive ? "text-[var(--brand-blue)]" : "text-slate-300 hover:text-white"
                         )}
                       >

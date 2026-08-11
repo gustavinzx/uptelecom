@@ -12,7 +12,7 @@ const slides = [
       </>
     ),
     subtitle: "Somos ultra rápido porque nossa rede é 100% em fibra óptica, com equipamentos modernos e de última geração. Planos de até 300MB.",
-    bgImage: "/imgs/slide1.jpg",
+    bgImage: "/imgs/slide1.webp",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const slides = [
       </>
     ),
     subtitle: "Trabalhe, assista a filmes em 4K e jogue online com estabilidade máxima para toda a família.",
-    bgImage: "/imgs/bg_plans_hq.jpg",
+    bgImage: "/imgs/bg_plans_hq.webp",
   },
   {
     id: 3,
@@ -34,11 +34,10 @@ const slides = [
       </>
     ),
     subtitle: "A melhor experiência de streaming e jogos com roteadores Wi-Fi de longo alcance.",
-    bgImage: "/imgs/bg_combo_hq.jpg",
+    bgImage: "/imgs/bg_combo_hq.webp",
   }
 ];
 
-import { SectionBackground } from "@/components/ui/SectionBackground";
 
 export default function Hero() {
   const plugin = useRef(
@@ -46,31 +45,35 @@ export default function Hero() {
   );
 
   return (
-    <section id="hero" className="relative w-full overflow-hidden bg-[#0b1220] min-h-[90vh] md:min-h-[850px] flex items-center">
-      <SectionBackground variant="aurora" />
+    <section id="hero" className="relative w-full overflow-hidden bg-[#0b1220] lg:min-h-[850px] flex flex-col lg:block">
       <Carousel
         plugins={[plugin.current]}
-        className="w-full h-full absolute inset-0 z-0"
+        className="w-full h-full relative lg:absolute lg:inset-0 z-0"
         opts={{
           loop: true,
+          duration: 60,
         }}
       >
         <CarouselContent className="h-full">
           {slides.map((slide) => (
-            <CarouselItem key={slide.id} className="h-full">
-              <div className="relative w-full h-[90vh] md:h-[850px] flex items-center justify-center">
+            <CarouselItem key={slide.id} className="h-full transform-gpu will-change-transform">
+              <div className="relative w-full min-h-[85vh] lg:min-h-[850px] flex items-center justify-center transform-gpu">
                 
                 {/* Background Image */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[15s] hover:scale-105"
-                  style={{ backgroundImage: `url(${slide.bgImage})` }}
+                <img 
+                  src={slide.bgImage}
+                  alt=""
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                  fetchPriority={slide.id === 1 ? "high" : "auto"}
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
                 />
-                
+
+
                 {/* Smooth Dark Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/70 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/70 to-transparent z-10 pointer-events-none" />
 
                 {/* Content Container */}
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-20 flex flex-col pt-32 pb-16 md:pt-40 md:pb-24">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-20 flex flex-col pt-32 pb-16 lg:pt-40 lg:pb-24">
                   <div className="w-full md:w-3/5 lg:w-[50%]">
                     
                     <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-[var(--brand-blue)]/20 border border-[var(--brand-blue)]/30 text-[var(--brand-blue)] text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(0,85,255,0.2)]">
@@ -126,11 +129,10 @@ export default function Hero() {
       </Carousel>
 
       {/* Floating Price Card (Premium Glassmorphism) */}
-      {/* On mobile: standard block flow under the content. On desktop: absolute floating */}
-      <div className="w-full px-6 pb-12 block lg:absolute lg:w-auto lg:p-0 lg:bottom-16 lg:right-24 xl:right-32 z-30 group">
+      <div className="w-full px-4 sm:px-6 py-12 lg:absolute lg:w-auto lg:p-0 lg:bottom-16 lg:right-24 xl:right-32 z-30 group relative">
         <div className="absolute -inset-1 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-primary)] rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition duration-500 hidden lg:block" />
         
-        <div className="relative bg-[#0b1220]/70 lg:bg-[#0b1220]/70 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl p-8 lg:p-10 max-w-[380px] mx-auto lg:mx-0 lg:hover:-translate-y-2 transition-all duration-300 flex flex-col">
+        <div className="relative bg-[#0b1220]/70 lg:bg-[#0b1220]/70 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl p-6 sm:p-8 lg:p-10 max-w-[380px] mx-auto lg:mx-0 lg:hover:-translate-y-2 transition-all duration-300 flex flex-col">
           
           <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--brand-blue)] shadow-[0_0_10px_rgba(0,85,255,1)] animate-pulse motion-reduce:animate-none" />

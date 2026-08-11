@@ -1,6 +1,5 @@
 import { Wifi, ShieldCheck, HeadphonesIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionBackground } from "@/components/ui/SectionBackground";
 import { CountUp } from "@/components/ui/CountUp";
 
 // Removed unused stats array
@@ -25,8 +24,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="vantagens" className="py-24 relative overflow-hidden bg-[#0b1220]">
-      <SectionBackground variant="dots" />
+    <section id="vantagens" className="py-24 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_features.jpg')" }}>
       {/* Dark Gradient Overlay for Fade effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0" />
       <Reveal direction="left" className="max-w-6xl mx-auto px-6 relative z-10">
@@ -102,9 +100,11 @@ export default function Features() {
           <div className="bg-gradient-to-br from-[#0b1220] to-[#0a101c] border border-white/10 rounded-[2rem] p-6 flex items-center justify-center relative overflow-hidden shadow-xl">
              <div className="absolute inset-0 bg-[var(--brand-blue)]/5 blur-3xl rounded-full" />
              <img 
-               src="/imgs/astro_1.png" 
+               src="/imgs/astro_1.webp" 
                alt="Mascote UP Telecom" 
-               className="relative z-10 w-full max-w-[200px] animate-float drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] scale-110" 
+               loading="lazy" 
+               decoding="async"
+               className="relative z-10 w-full max-w-[200px] animate-float motion-reduce:animate-none drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] scale-110" 
              />
           </div>
 

@@ -4,7 +4,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionBackground } from "@/components/ui/SectionBackground";
 
 function SpeedGauge({ value, max, color }: { value: number; max: number; color: string }) {
   const percentage = Math.min(value / max, 1);
@@ -19,6 +18,7 @@ function SpeedGauge({ value, max, color }: { value: number; max: number; color: 
       <circle cx="50" cy="50" r="40" fill="none" stroke={color} strokeWidth="8"
         strokeDasharray={circumference * 0.75} strokeDashoffset={offset}
         transform="rotate(135 50 50)" strokeLinecap="round"
+        className="motion-reduce:transition-none"
         style={{ transition: "stroke-dashoffset 0.8s ease" }} />
     </svg>
   );
@@ -105,9 +105,9 @@ const comboPlans = [
 
 export default function Plans() {
   return (
-    <section id="planos" className="py-24 text-white relative overflow-hidden bg-[#0b1220]">
-      <SectionBackground variant="grid" />
+    <section id="planos" className="py-24 text-white relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/imgs/bg_plans_family.jpg')" }}>
       {/* Dark Overlay with smooth top/bottom gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/70 to-[#0b1220] z-0 pointer-events-none" />
       
       <Reveal className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -147,7 +147,7 @@ export default function Plans() {
         </Tabs>
         
         <p className="text-center text-slate-400 text-sm mt-12 font-medium">
-          Esses são alguns dos planos que temos para você. <a href="https://wa.me/5561981765721" className="text-white hover:text-[var(--brand-blue)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
+          Esses são alguns dos planos que temos para você. <a href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Gostaria de ajuda para escolher o melhor plano de internet para a minha necessidade.")}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--brand-blue)] font-bold transition-colors">Entre em contato</a> e vamos personalizar a melhor opção para sua necessidade.
         </p>
       </Reveal>
     </section>
@@ -263,7 +263,9 @@ function PlanCard({ plan }: { plan: any }) {
 
       {/* CTA Button */}
       <a
-        href="#cobertura"
+        href={`https://wa.me/5561981773495?text=${encodeURIComponent(`Olá! Acessei o site e gostaria de contratar o plano *${plan.name}* (R$ ${plan.price},${plan.cents}/mês). Podem me ajudar?`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           buttonVariants({ size: "lg" }),
           "relative z-10 w-full min-h-[44px] h-14 rounded-full font-black text-lg transition-all",

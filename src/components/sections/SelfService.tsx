@@ -46,7 +46,7 @@ export default function SelfService() {
           
           <div className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0 relative">
              <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full" />
-             <img src="/imgs/astro_5.png" alt="Mascote UP Telecom no App" className="relative z-10 w-full max-w-[450px] animate-float drop-shadow-2xl" />
+             <img src="/imgs/astro_5.png" alt="Mascote UP Telecom no App" loading="lazy" decoding="async" className="relative z-10 w-full max-w-[450px] animate-float motion-reduce:animate-none drop-shadow-2xl" />
           </div>
         </div>
       </Reveal>

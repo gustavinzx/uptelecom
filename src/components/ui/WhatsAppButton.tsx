@@ -18,7 +18,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/5511999999999" // Coloque o número real aqui
+      href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Acessei o site da UP Telecom e gostaria de tirar uma dúvida rápida.")}`}
       target="_blank"
       rel="noreferrer"
       className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-110 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'} hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)]`}

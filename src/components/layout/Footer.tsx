@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, ShieldAlert } from "lucide-react";
+import { MapPin, Phone, Mail, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <a href="#" className="inline-block mb-2 group">
               <img 
-                src="/imgs/logo_up_horizontal.png" 
+                src="/imgs/logo_up_horizontal.webp" 
                 alt="UP Telecom" 
                 className="w-[160px] md:w-[180px] h-auto object-contain transform-gpu group-hover:scale-105 transition-transform duration-300 -ml-4 lg:ml-0" 
               />
@@ -62,13 +62,14 @@ export default function Footer() {
           <div>
             <h4 className="font-extrabold text-lg text-white mb-6 tracking-wider uppercase">CONTATO</h4>
             <ul className="space-y-4 text-sm font-medium mb-6">
-              <li className="flex items-start gap-3 text-slate-300">
-                <MapPin size={18} className="shrink-0 mt-0.5 text-[var(--brand-primary)]" />
-                <span className="leading-relaxed">Col. Agrícola 26 de Setembro, Rua 01 chª. 13<br/>72155-000, DF</span>
-              </li>
-              <li className="flex items-center gap-3 text-slate-300">
-                <Phone size={18} className="shrink-0 text-[var(--brand-primary)]" />
-                <span className="font-bold tracking-wide">61 98176-5721</span>
+              <li className="flex items-start gap-3 text-slate-400 group cursor-pointer hover:text-white transition-colors">
+                <div className="mt-1 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#25D366] transition-colors shrink-0">
+                  <Phone size={16} />
+                </div>
+                <div>
+                  <p className="text-sm font-medium mb-0.5">Televendas e Suporte</p>
+                  <a href={`https://wa.me/5561981773495?text=${encodeURIComponent("Olá! Preciso de atendimento da UP Telecom.")}`} target="_blank" rel="noopener noreferrer" className="font-bold tracking-wide hover:text-[var(--brand-primary)] transition-colors block">61 98177-3495</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-slate-300">
                 <Mail size={18} className="shrink-0 text-[var(--brand-primary)]" />
@@ -106,10 +107,10 @@ export default function Footer() {
           
           {/* Security Badge */}
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-[#1a1f11] border border-[#a3e635]/30 text-[#a3e635] px-6 py-4 rounded-2xl max-w-4xl font-medium text-sm shadow-[0_0_20px_rgba(163,230,53,0.05)] text-left sm:text-center">
-            <ShieldAlert size={28} className="shrink-0 text-[#a3e635]" />
+            <ShieldCheck size={28} className="shrink-0 text-[#a3e635]" />
             <p className="leading-relaxed">
               <strong className="text-[#a3e635] block sm:inline mr-1 tracking-wide uppercase text-xs">Aviso de Segurança:</strong> 
-              A UP Telecom nunca solicita pagamento por links fora dos canais oficiais (WhatsApp 61 98176-5721 e site upconexion.com.br).
+              A UP Telecom nunca solicita pagamento por links fora dos canais oficiais (WhatsApp 61 98177-3495 e site upconexion.com.br).
             </p>
           </div>
 
