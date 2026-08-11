@@ -70,8 +70,20 @@ export default function Hero() {
 
 
                 {/* Premium Dark Gradient Overlays for Readability & Navbar Protection */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0b1220] via-[#0b1220]/80 via-40% to-transparent z-10 pointer-events-none" />
-                <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#0b1220] via-[#0b1220]/50 to-transparent z-10 pointer-events-none" />
+                <div
+                  className="absolute inset-0 z-10 pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #0b1220 0%, rgba(11,18,32,0.9) 20%, rgba(11,18,32,0.65) 40%, rgba(11,18,32,0.3) 60%, transparent 85%)",
+                  }}
+                />
+                <div
+                  className="absolute top-0 inset-x-0 h-56 z-10 pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, #0b1220 0%, rgba(11,18,32,0.7) 30%, rgba(11,18,32,0.3) 65%, transparent 100%)",
+                  }}
+                />
 
                 {/* Content Container */}
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-20 flex flex-col pt-32 pb-16 lg:pt-40 lg:pb-24">
